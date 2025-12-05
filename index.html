@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Luisa Fernanda Rincón</title>
+    <!-- Carga de Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de la fuente Inter y paleta de colores azul/slate --><script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark-bg': '#0F172A', // Slate-900 oscuro
+                        'dark-card': '#1E293B', // Slate-800
+                        'accent-blue': '#3B82F6', // Azul principal (Blue-500)
+                        'accent-light': '#93C5FD', // Azul claro para acentos (Blue-300)
+                        'text-light': '#E5E7EB', // Gris claro para texto
+                        'text-muted': '#A1A1AA', // Gris medio para texto
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para la elegancia y dinamismo */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .section-padding {
+            padding: 5rem 1rem;
+        }
+        @media (min-width: 640px) {
+            .section-padding {
+                padding: 6rem 4rem;
+            }
+        }
+        /* Efecto de borde sutil para las tarjetas de habilidad y proyecto */
+        .skill-card, .project-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3), 0 4px 6px -4px rgba(59, 130, 246, 0.1);
+            border-color: #3B82F6; /* Borde de acento al pasar el ratón */
+        }
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4);
+            border-color: #3B82F6;
+        }
+
+        /* Animación de entrada para el contenido principal */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        #main-content {
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Animación de "pulsación" para el avatar */
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+        .avatar-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Animación para el texto del Hero */
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-text-animate > * {
+            animation: slideInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        .hero-text-animate > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-text-animate > *:nth-child(2) { animation-delay: 0.3s; }
+        .hero-text-animate > *:nth-child(3) { animation-delay: 0.5s; }
+        .hero-text-animate > *:nth-child(4) { animation-delay: 0.7s; }
+
+        /* Fondo animado sutil para la sección hero */
+        .hero-bg-animated {
+            background-image: linear-gradient(45deg, #0F172A 25%, #1E293B 75%);
+            background-size: 200% 200%;
+            animation: gradientShift 10s ease infinite alternate;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* Iconos de habilidades con pequeño bounce */
+        .icon-bounce {
+            transition: transform 0.2s ease-in-out;
+        }
+        .skill-card:hover .icon-bounce {
+            transform: translateY(-3px);
+        }
+
+        /* Pequeño efecto en enlaces */
+        .nav-link.active {
+            border-bottom: 2px solid #3B82F6;
+        }
+
+        /* Estilos específicos para el menú móvil */
+        .mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateY(-100%);
+        }
+        .mobile-menu.open {
+            transform: translateY(0);
+        }
+       
+        /* --- Scroll Reveal Animations (Añadido para dinamismo) --- */
+        .scroll-reveal {
+            opacity: 0;
+            /* Se ajustó la curva de animación para un efecto de entrada más suave */
+            transform: translateY(30px) rotateX(1deg);
+            transition: all 0.6s ease-out;
+            transition-delay: 0.1s;
+        }
+
+        .scroll-reveal.animate-in {
+            opacity: 1;
+            transform: translateY(0) rotateX(0deg);
+        }
+        /* Final del Scroll Reveal */
+    </style>
+</head>
+<body class="bg-dark-bg text-text-light antialiased">
+
+    <!-- Navegación Fija --><nav class="sticky top-0 z-50 bg-dark-bg bg-opacity-95 backdrop-blur-sm shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Nombre --><a href="#hero" class="text-2xl font-bold text-accent-light hover:text-white transition duration-300">
+                    Luisa Fernanda Rincón
+                </a>
+                <!-- Menú de Navegación (Desktop) --><div class="hidden md:flex space-x-6">
+                    <a href="#about" class="nav-link text-text-muted hover:text-accent-blue transition duration-300">Sobre Mí</a>
+                    <a href="#skills" class="nav-link text-text-muted hover:text-accent-blue transition duration-300">Habilidades</a>
+                    <a href="#projects" class="nav-link text-text-muted hover:text-accent-blue transition duration-300">Proyectos</a>
+                    <a href="#contact" class="nav-link text-text-muted hover:text-accent-blue transition duration-300">Contacto</a>
+                </div>
+                <!-- Botón de Menú Móvil --><button id="mobile-menu-button" class="md:hidden text-text-light hover:text-accent-blue focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil --><div id="mobile-menu" class="mobile-menu md:hidden absolute w-full bg-dark-card border-b border-gray-700 shadow-xl">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                <a href="#about" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-gray-700 rounded-md w-full text-center">Sobre Mí</a>
+                <a href="#skills" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-gray-700 rounded-md w-full text-center">Habilidades</a>
+                <a href="#projects" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-gray-700 rounded-md w-full text-center">Proyectos</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-gray-700 rounded-md w-full text-center">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main-content">
+        <!-- Sección Hero (Inicio) --><header id="hero" class="section-padding flex items-center justify-center min-h-screen hero-bg-animated">
+            <div class="text-center max-w-5xl bg-dark-card bg-opacity-80 p-8 md:p-12 rounded-xl shadow-2xl border border-gray-700/50 flex flex-col md:flex-row items-center justify-center gap-8">
+                <!-- Foto de Perfil --><div class="flex-shrink-0">
+                    <!-- Placeholder con color púrpura oscuro sutil --><img src="https://placehold.co/200x200/3A0062/ffffff?text=Luisa" alt="Luisa Fernanda Rincón" class="rounded-full w-48 h-48 object-cover border-4 border-accent-blue avatar-pulse">
+                </div>
+                <!-- Contenido de Texto --><div class="hero-text-animate md:text-left text-center">
+                    <p class="text-xl text-accent-light mb-4">
+                        Administración, Tecnología y Datos
+                    </p>
+                    <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+                        <span class="text-white">Luisa Fernanda Rincón</span>
+                        <br> <span class="text-accent-blue">Profesional Multidisciplinar</span>
+                    </h1>
+                    <p class="text-lg sm:text-2xl text-text-light mb-8">
+                        Administradora de Empresas | Estudiante de Desarrollo (FP) | Máster en Análisis de Datos
+                    </p>
+                    <a href="#projects" class="inline-block px-8 py-3 bg-accent-blue text-white font-semibold rounded-full shadow-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105">
+                        Ver Proyectos Destacados
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sección Sobre Mí --><section id="about" class="section-padding bg-dark-card">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-accent-light">Sobre Mí: El Eje de Tres Pilares</h2>
+
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <!-- Pilar 1: Administración (Scroll Reveal) --><div class="p-6 rounded-xl border border-gray-700 hover:border-accent-blue transition duration-300 skill-card scroll-reveal">
+                        <svg class="w-12 h-12 text-accent-light mx-auto mb-4 icon-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Visión Empresarial</h3>
+                        <p class="text-text-muted">Mi base en Administración me permite entender los objetivos de negocio, la eficiencia operativa y la toma de decisiones estratégicas, asegurando que los proyectos técnicos generen valor real.</p>
+                    </div>
+                    <!-- Pilar 2: Desarrollo (Scroll Reveal) --><div class="p-6 rounded-xl border border-gray-700 hover:border-accent-blue transition duration-300 skill-card scroll-reveal">
+                        <svg class="w-12 h-12 text-accent-light mx-auto mb-4 icon-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Habilidades Técnicas</h3>
+                        <p class="text-text-muted">Como estudiante de Desarrollo, aporto la capacidad de construir soluciones funcionales, automatizar procesos y colaborar eficazmente con equipos de ingeniería.</p>
+                    </div>
+                    <!-- Pilar 3: Datos (Scroll Reveal) --><div class="p-6 rounded-xl border border-gray-700 hover:border-accent-blue transition duration-300 skill-card scroll-reveal">
+                        <svg class="w-12 h-12 text-accent-light mx-auto mb-4 icon-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M18 10a8 8 0 10-16 0 8 8 0 0016 0zm-8-4a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Análisis Estratégico</h3>
+                        <p class="text-text-muted">Mi Máster en Análisis de Datos me permite transformar grandes volúmenes de información en decisiones cuantificables, creando modelos predictivos y visualizaciones impactantes.</p>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center scroll-reveal">
+                    <p class="text-xl text-text-light italic">"Mi objetivo es cerrar la brecha entre la estrategia empresarial y la ejecución tecnológica, impulsando el crecimiento con datos."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Habilidades --><section id="skills" class="section-padding bg-dark-bg">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-accent-light scroll-reveal">Conjunto de Habilidades</h2>
+
+                <!-- Categoría de Habilidades --><div class="space-y-12">
+                    <!-- Habilidades de Análisis de Datos (Scroll Reveal) --><div class="bg-dark-card p-8 rounded-xl shadow-xl border border-gray-700 scroll-reveal">
+                        <h3 class="text-2xl font-bold text-accent-light mb-6 flex items-center">
+                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            Análisis de Datos & Business Intelligence
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                            <!-- Los skill-card interiores ya tienen hover, se benefician del reveal del contenedor --><div class="skill-card p-4 bg-gray-800 text-center rounded-lg border border-gray-700">Python (Pandas, Scikit-learn)</div>
+                            <div class="skill-card p-4 bg-gray-800 text-center rounded-lg border border-gray-700">SQL (Consultas Avanzadas)</div>
+                            <div class="skill-card p-4 bg-gray-800 text-center rounded-lg border border-gray-700">Power BI / Tableau</div>
+                            <div class="skill-card p-4 bg-gray-800 text-center rounded-lg border border-gray-700">Modelado Estadístico</div>
+                        </div>
+                    </div>
+
+                    <!-- Habilidades de Desarrollo (FP) (Scroll Reveal) --><div class="bg-dark-card p-8 rounded-xl shadow-xl border border-gray-700 scroll-reveal">
+                        <h3 class="text-2xl font-bold text-accent-light mb-6 flex items-center">
+                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            Desarrollo de Aplicaciones
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                            <div class="skill-card p-4 bg-gray-800 text-center rounded-lg border border-gray-700">JavaScript / TypeScript</div>
+                            <div class="skill-card p-4 bg-gray-800 text-center rounded-lg border border-gray-700">HTML5 & CSS3 / Tailwind</div>
+                            <div class="skill-card p-4 bg-gray-800 text-center rounded-lg border border-gray-700">Framework (Ej: React/Angular)</div>
+                            <div class="skill-card p-4 bg-gray-800 text-center rounded-lg border border-gray-700">Bases de Datos (SQL/NoSQL)</div>
+                        </div>
+                    </div>
+
+                    <!-- Habilidades de Administración y Gestión (Scroll Reveal) --><div class="bg-dark-card p-8 rounded-xl shadow-xl border border-gray-700 scroll-reveal">
+                        <h3 class="text-2xl font-bold text-accent-light mb-6 flex items-center">
+                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 4V2a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M4 8h16"></path></svg>
+                            Gestión & Estrategia Empresarial
+                        </h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                            <div class="skill-card p-4 bg-gray-800 text-center rounded-lg border border-gray-700">Gestión de Proyectos (Agile/Scrum)</div>
+                            <div class="skill-card p-4 bg-gray-800 text-center rounded-lg border border-gray-700">Análisis de Costes y Presupuestos</div>
+                            <div class="skill-card p-4 bg-gray-800 text-center rounded-lg border border-gray-700">Liderazgo de Equipos</div>
+                            <div class="skill-card p-4 bg-gray-800 text-center rounded-lg border border-gray-700">Comunicación Interdepartamental</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Proyectos --><section id="projects" class="section-padding bg-dark-card">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-accent-light scroll-reveal">Proyectos Destacados</h2>
+                <p class="text-center text-text-muted mb-10 scroll-reveal">Ejemplos de cómo aplico mis tres áreas de conocimiento.</p>
+
+                <!-- CTA para Descargar CV (Scroll Reveal) --><div class="text-center mb-12 scroll-reveal">
+                    <a href="https://drive.google.com/file/d/1SZ6DURVP-c1-EPh2Gu4VEDW4h92XOxxz/view?usp=sharing" target="_blank" class="inline-block px-10 py-4 bg-accent-blue text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105 border-2 border-transparent hover:border-white">
+                        <svg class="w-6 h-6 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Ver/Descargar mi CV Completo (PDF)
+                    </a>
+                </div>
+
+                <!-- Rejilla de Proyectos --><div class="grid md:grid-cols-2 gap-8">
+                   
+                    <!-- NUEVO PROYECTO: Landing Page Danza Viva (Scroll Reveal) -->
+                    <div class="project-card bg-dark-bg p-6 rounded-xl shadow-xl border border-gray-700 transition duration-300 hover:shadow-emerald-500/40 hover:border-emerald-500 scroll-reveal">
+                        <h3 class="text-2xl font-semibold text-white mb-3">Landing Page de Cliente (Danza Viva)</h3>
+                        <span class="inline-block bg-emerald-900/50 text-emerald-300 text-xs font-medium px-2.5 py-0.5 rounded-full mb-3">Web Design & UX</span>
+                        <p class="text-text-muted mb-4">
+                            Desarrollo del *front-end* de una página de aterrizaje completa para un estudio de danza. Énfasis en la estética, navegación suave y presentación de contenido multimedia (Galería y Clips).
+                        </p>
+                        <!-- VISTA PREVIA HTML (Placeholder estético) -->
+                        <div class="relative mb-4 overflow-hidden rounded-lg border border-gray-700">
+                             <img
+                                src="https://placehold.co/600x300/10B981/ffffff?text=Web+Danza+Viva"
+                                alt="Captura de pantalla de la Landing Page Danza Viva"
+                                class="w-full h-auto object-cover"/>
+                        </div>
+                        <a href="Proyecto.html" target="_blank" class="text-accent-blue hover:underline font-medium">Ver Proyecto en Vivo &rarr;</a>
+                    </div>
+
+                    <!-- PROYECTO 1: Prototipo Figma (Scroll Reveal) -->
+                    <div class="project-card bg-dark-bg p-6 rounded-xl shadow-xl border border-gray-700 transition duration-300 hover:shadow-pink-500/40 hover:border-pink-500 scroll-reveal">
+                        <h3 class="text-2xl font-semibold text-white mb-3">Prototipo UI/UX para e-commerce (FarmaLocal)</h3>
+                        <span class="inline-block bg-pink-900/50 text-pink-300 text-xs font-medium px-2.5 py-0.5 rounded-full mb-3">UI/UX & Development</span>
+                        <p class="text-text-muted mb-4">
+                            Diseño completo de la interfaz de usuario para una aplicación de farmacia local, centrado en la usabilidad móvil. Incluye flujos de bienvenida, autenticación, navegación de productos y pago.
+                        </p>
+                        <!-- VISTA PREVIA INTERACTIVA: Figma Embed -->
+                        <div class="relative mb-4 overflow-hidden rounded-lg border border-gray-700 h-96">
+                            <iframe
+                                style="border: 1px solid rgba(0, 0, 0, 0.1);"
+                                width="100%"
+                                height="100%"
+                                src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/g5nzcp5epg5o6ikS81V3nN/Programaci%C3%B3n-multimedia?node-id=29-3"
+                                allowfullscreen
+                                title="Figma Prototype: FarmaLocal UI/UX">
+                            </iframe>
+                        </div>
+                        <a href="https://www.figma.com/design/g5nzcp5epg5o6ikS81V3nN/Programaci%C3%B3n-multimedia?node-id=29-3&p=f" target="_blank" class="text-accent-blue hover:underline font-medium">Ver en Figma (Enlace Directo) &rarr;</a>
+                    </div>
+                   
+                    <!-- Proyecto 2: Análisis de Negocio (Scroll Reveal) --><div class="project-card bg-dark-bg p-6 rounded-xl shadow-xl border border-gray-700 transition duration-300 hover:shadow-accent-blue/40 hover:border-accent-blue scroll-reveal">
+                        <h3 class="text-2xl font-semibold text-white mb-3">Dashboard de KPIs Financieros</h3>
+                        <span class="inline-block bg-blue-900/50 text-accent-blue text-xs font-medium px-2.5 py-0.5 rounded-full mb-3">Data & Business</span>
+                        <p class="text-text-muted mb-4">
+                            Creación de un panel interactivo (usando Power BI o Python/Dash) para monitorear métricas clave (KPIs) de rentabilidad y eficiencia operativa. Incluye análisis de cohortes para identificar tendencias.
+                        </p>
+                        <a href="#" class="text-accent-blue hover:underline font-medium">Ver Estudio de Caso (Próximamente) &rarr;</a>
+                    </div>
+
+                    <!-- Proyecto 3: Solución de Desarrollo (Scroll Reveal) --><div class="project-card bg-dark-bg p-6 rounded-xl shadow-xl border border-gray-700 transition duration-300 hover:shadow-accent-blue/40 hover:border-accent-blue scroll-reveal">
+                        <h3 class="text-2xl font-semibold text-white mb-3">Sistema de Gestión de Tareas Ágiles</h3>
+                        <span class="inline-block bg-cyan-900/50 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full mb-3">Development & Admin</span>
+                        <p class="text-text-muted mb-4">
+                            Desarrollo de una aplicación web (con React/Angular) para optimizar la asignación de recursos y seguimiento de hitos en un equipo pequeño, implementando el flujo de trabajo Scrum.
+                        </p>
+                        <a href="#" class="text-accent-blue hover:underline font-medium">Ver Repositorio GitHub (Próximamente) &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto --><section id="contact" class="section-padding bg-dark-bg">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-6 text-accent-light scroll-reveal">Conectemos</h2>
+                <p class="text-xl text-text-light mb-8 scroll-reveal">
+                    Estoy abierta a nuevas oportunidades que requieran una mezcla de visión de negocio y ejecución técnica.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-6 scroll-reveal">
+                    <!-- Email (con asunto predefinido) --><a href="mailto:luisa.rincond95@gmail.com?subject=Consulta%20de%20Oportunidad%20Profesional%20(Portafolio)" class="flex items-center justify-center px-6 py-3 bg-dark-card border border-gray-700 text-white rounded-lg shadow-md hover:bg-accent-blue transition duration-300 transform hover:scale-105">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 4v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7"></path></svg>
+                        luisa.rincond95@gmail.com
+                    </a>
+                    <!-- LinkedIn --><a href="https://www.linkedin.com/in/luisarinconduran/" target="_blank" class="flex items-center justify-center px-6 py-3 bg-dark-card border border-gray-700 text-white rounded-lg shadow-md hover:bg-accent-blue transition duration-300 transform hover:scale-105">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        LinkedIn
+                    </a>
+                    <!-- GitHub --><a href="https://github.com/LuisaR95" target="_blank" class="flex items-center justify-center px-6 py-3 bg-dark-card border border-gray-700 text-white rounded-lg shadow-md hover:bg-accent-blue transition duration-300 transform hover:scale-105">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.08-.744.085-.729.085-.729 1.192.085 1.815 1.258 1.815 1.258 1.05 1.815 2.721 1.293 3.376.993.109-.775.419-1.293.76-1.593-2.673-.303-5.492-1.336-5.492-5.927 0-1.31.465-2.381 1.235-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.292-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.771.84 1.232 1.911 1.232 3.221 0 4.594-2.822 5.621-5.498 5.921.431.372.823 1.102.823 2.222v3.293c0 .319.192.694.8.576C20.564 21.799 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer --><footer class="bg-dark-card border-t border-gray-800 p-4 text-center text-gray-500 text-sm">
+            &copy; 2025 Luisa Fernanda Rincón. Desarrollado con el poder de la Admin, el Código y los Datos.
+        </footer>
+    </div>
+
+    <!-- JavaScript para el Desplazamiento Suave, Resaltado y Menú Móvil --><script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+            const sections = document.querySelectorAll('section, header#hero');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // --- 1. Control de Menú Móvil ---
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+           
+            // Cierra el menú móvil al hacer clic en cualquier enlace
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+
+
+            // --- 2. Desplazamiento Suave ---
+            navLinks.forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        // Actualiza la URL sin recargar la página
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
+
+            // --- 3. Resaltar Enlace de Navegación Activo al hacer scroll ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Desactivar todos los enlaces de escritorio
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('text-accent-blue', 'font-semibold', 'active');
+                            link.classList.add('text-text-muted');
+                        });
+
+                        const id = entry.target.id;
+                        // Activar el enlace de escritorio correspondiente
+                        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+
+                        if (activeLink) {
+                            activeLink.classList.remove('text-text-muted');
+                            activeLink.classList.add('text-accent-blue', 'font-semibold', 'active');
+                        }
+                    }
+                });
+            }, {
+                // Margen de raíz ajustado para hacer el resaltado más preciso
+                rootMargin: '0px 0px -60% 0px',
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+           
+            // --- 4. Animación al hacer Scroll (Scroll Reveal) ---
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+
+            const scrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Añade la clase para disparar la animación
+                        entry.target.classList.add('animate-in');
+                        // Deja de observar el elemento una vez animado
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                // El elemento debe ser visible al menos en un 10%
+                threshold: 0.1,
+                // Ajustar el margen inferior para que se active un poco antes de que entre el elemento
+                rootMargin: '0px 0px -100px 0px'
+            });
+
+            revealElements.forEach(element => {
+                scrollObserver.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
