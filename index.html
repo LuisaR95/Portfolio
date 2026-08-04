@@ -105,6 +105,14 @@
             border-color: #EC4899;
         }
 
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(236, 72, 153, 0.2);
+        }
+
         .mobile-menu {
             transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
             max-height: 0;
@@ -126,7 +134,7 @@
             <div class="flex justify-between items-center h-20">
                 <a href="#hero" class="text-xl sm:text-2xl font-black text-white hover:text-secondary-magenta transition tracking-wider flex items-center gap-2">
                     <span class="bg-gradient-to-r from-primary-blue to-secondary-magenta bg-clip-text text-transparent">LUISA RINCÓN</span>
-                    <span class="text-xs bg-slate-800 text-light-glow px-2 py-0.5 rounded-full border border-slate-700 font-normal">Data & Dev</span>
+                    <span class="text-xs bg-slate-800 text-light-glow px-2 py-0.5 rounded-full border border-slate-700 font-normal">Data &amp; Dev</span>
                 </a>
                 <div class="hidden md:flex space-x-5 text-sm">
                     <a href="#about" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2">Sobre Mí</a>
@@ -169,7 +177,7 @@
                 </div>
                 <div class="md:text-left text-center order-2 md:order-1 flex-1">
                     <div class="inline-flex items-center gap-2 bg-primary-blue/20 text-light-glow text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full border border-primary-blue/30 mb-4">
-                        <i class="fas fa-check-circle text-secondary-magenta"></i> Disponible para Consultoría & Desarrollo
+                        <i class="fas fa-check-circle text-secondary-magenta"></i> Disponible para Consultoría &amp; Desarrollo
                     </div>
                     <h1 class="text-4xl sm:text-6xl font-black leading-tight tracking-tight mb-4">
                         <span class="text-white block">Luisa Fernanda</span>
@@ -179,7 +187,7 @@
                         Data Analytics &amp; Software Consultant
                     </p>
                     <p class="text-sm sm:text-base text-text-muted mb-8 leading-relaxed max-w-2xl">
-                        Administradora de Empresas + Desarrolladora de Software + Máster en Análisis de Datos. Más de 5 años transformando datos en estrategia e implementando soluciones backend/frontend con Java, Spring Boot, Angular y Power BI.
+                        Administradora de Empresas + Desarrolladora de Software + Máster en Análisis de Datos. Más de 5 años transformando datos en estrategia e implementando soluciones backend/frontend/mobile con Java, Spring Boot, Kotlin, Angular y Power BI.
                     </p>
                     <div class="flex flex-wrap gap-4 justify-center md:justify-start">
                         <a href="#projects"
@@ -216,9 +224,9 @@
 
                     <div class="p-6 rounded-2xl border border-slate-800 bg-darkest/60 skill-card scroll-reveal" style="transition-delay: 0.1s;">
                         <i class="fas fa-code text-secondary-magenta mb-4 text-4xl"></i>
-                        <h3 class="text-xl font-bold text-white mb-2">Desarrollo Backend &amp; Frontend</h3>
+                        <h3 class="text-xl font-bold text-white mb-2">Desarrollo Backend, Frontend &amp; Mobile</h3>
                         <p class="text-text-muted text-sm leading-relaxed">
-                            Construcción de microservicios con Java 21 y Spring Boot, consumo de APIs REST, interfaces reactivas con Angular/TypeScript y testing avanzado (JUnit 5, Testcontainers).
+                            Microservicios con Java 21 y Spring Boot, apps móviles nativas con Kotlin &amp; Jetpack Compose, interfaces reactivas con Angular/TypeScript y testing avanzado (JUnit 5, Testcontainers).
                         </p>
                     </div>
 
@@ -349,10 +357,10 @@
                 <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-primary-blue scroll-reveal">Stack Tecnológico &amp; Competencias</h2>
 
                 <div class="space-y-12">
-                    <!-- Software Development -->
+                    <!-- Software & Mobile Development -->
                     <div class="scroll-reveal">
                         <h3 class="text-xl font-bold text-secondary-magenta mb-4 flex items-center gap-2">
-                            <i class="fas fa-laptop-code"></i> Software Development &amp; Architecture
+                            <i class="fas fa-laptop-code"></i> Software Development, Architecture &amp; Mobile
                         </h3>
                         <div id="dev-skills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
                     </div>
@@ -368,7 +376,7 @@
                     <!-- Software Quality & Tools -->
                     <div class="scroll-reveal">
                         <h3 class="text-xl font-bold text-accent-cyan mb-4 flex items-center gap-2">
-                            <i class="fas fa-vial"></i> Testing, Cloud &amp; Tools
+                            <i class="fas fa-vial"></i> Testing, Cloud &amp; Mobile Tools
                         </h3>
                         <div id="tools-skills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
                     </div>
@@ -384,30 +392,31 @@
             </div>
         </section>
 
-        <!-- PROYECTOS -->
+        <!-- PROYECTOS DESTACADOS UNIFICADOS -->
         <section id="projects" class="section-padding">
             <div class="max-w-6xl mx-auto glass-panel p-8 md:p-12">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-4 text-white scroll-reveal">Proyectos Destacados</h2>
-                <p class="text-center text-text-muted text-sm sm:text-base mb-10 scroll-reveal">
-                    Casos de estudio, proyectos integradores y repositorios que reflejan mi capacidad técnica y analítica.
+                <p class="text-center text-text-muted text-sm sm:text-base mb-12 scroll-reveal">
+                    Casos de estudio, aplicaciones móviles, proyectos integradores y repositorios que reflejan mi capacidad técnica y analítica.
                 </p>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- PROYECTO 1: MADRILINK (PROYECTO INSIGNIA / FINAL) -->
-                    <div class="project-card p-6 rounded-2xl bg-gradient-to-b from-card-bg to-darkest border-2 border-secondary-magenta/60 hover:border-pink-400 scroll-reveal relative flex flex-col justify-between shadow-xl">
+                <!-- GRID DE PROYECTOS (2x2 EN DESKTOP) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+                    
+                    <!-- PROYECTO 1: MADRILINK -->
+                    <div class="project-card flex flex-col justify-between p-6 rounded-2xl bg-gradient-to-b from-card-bg to-darkest border-2 border-secondary-magenta/70 hover:border-pink-400 shadow-xl scroll-reveal h-full">
                         <div>
                             <div class="flex justify-between items-center mb-3">
                                 <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-secondary-magenta/30">
-                                    <i class="fas fa-star text-yellow-400 mr-1"></i> Proyecto Integrador Final
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i> Proyecto Integrador
                                 </span>
-                                <span class="text-xs text-text-muted"><i class="far fa-calendar-alt mr-1"></i> Abr 2026</span>
                             </div>
                             <h3 class="text-2xl font-black text-white mb-2">Madrilink</h3>
                             <div class="flex flex-wrap gap-1.5 mb-4">
-                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-0.5 rounded-md">Java / Spring Boot</span>
-                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-0.5 rounded-md">REST APIs</span>
-                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-0.5 rounded-md">SQL / DB</span>
-                                <span class="bg-accent-cyan/20 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-md">Full Stack Architecture</span>
+                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-1 rounded-md border border-primary-blue/30">Java / Spring Boot</span>
+                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-1 rounded-md border border-primary-blue/30">REST APIs</span>
+                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-1 rounded-md border border-primary-blue/30">SQL / DB</span>
+                                <span class="bg-accent-cyan/20 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-md border border-accent-cyan/30">Full Stack</span>
                             </div>
                             <p class="text-text-muted text-xs sm:text-sm mb-6 leading-relaxed">
                                 Plataforma web integrada desarrollada como proyecto final de estudios. Diseñada con arquitectura modular backend, consumo de APIs y gestión de datos orientada a resolver necesidades comunitarias/urbanas en Madrid. Incluye memoria técnica y ejecutable completo.
@@ -415,68 +424,126 @@
                         </div>
                         
                         <div>
-                            <div class="overflow-hidden rounded-xl border border-slate-800 mb-4 bg-darkest/80">
+                            <div class="overflow-hidden rounded-xl border border-slate-800 mb-5 bg-darkest/90 aspect-video flex items-center justify-center">
                                 <img src="Madrilink.png" 
                                      alt="Madrilink Platform" 
-                                     class="w-full h-36 object-cover hover:scale-105 transition duration-300" 
+                                     class="w-full h-40 object-cover object-top hover:scale-105 transition duration-300" 
                                      onerror="this.onerror=null; this.src='Marilink.png'; this.onerror=function(){this.src='https://placehold.co/600x400/EC4899/ffffff?text=Madrilink+Platform';};">
                             </div>
                             <div class="flex flex-col sm:flex-row gap-2 text-xs font-bold">
-                                <a href="https://github.com/LuisaR95/madridlink" target="_blank" class="flex-1 py-2.5 px-3 bg-secondary-magenta hover:bg-pink-600 text-white rounded-lg text-center transition flex items-center justify-center gap-1.5 shadow-md">
+                                <a href="https://github.com/LuisaR95/madridlink" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 px-3 bg-secondary-magenta/20 hover:bg-secondary-magenta/30 text-secondary-magenta font-bold rounded-lg text-center border border-secondary-magenta/40 transition flex items-center justify-center gap-1.5">
                                     <i class="fab fa-github text-sm"></i> Repositorio Git
                                 </a>
-                                <a href="https://drive.google.com/drive/u/0/folders/1yzT0cAlzk0sIV6HngrvuaqBfU9dvj-h" target="_blank" class="flex-1 py-2.5 px-3 bg-slate-800 hover:bg-slate-700 text-text-light rounded-lg text-center border border-slate-700 transition flex items-center justify-center gap-1.5">
+                                <a href="https://drive.google.com/drive/u/0/folders/1_yzT0cAlzk0slV6HngrvuaqBfU9dvj-h" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 px-3 bg-slate-800 hover:bg-slate-700 text-text-light rounded-lg text-center border border-slate-700 transition flex items-center justify-center gap-1.5">
                                     <i class="fab fa-google-drive text-yellow-400 text-sm"></i> Memoria &amp; Docs
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- PROYECTO 2: CARTAGENA -->
-                    <div class="project-card p-6 rounded-2xl bg-card-bg/80 border border-slate-800 hover:border-primary-blue scroll-reveal flex flex-col justify-between">
+                    <!-- PROYECTO 2: FARMACOL APP (ANDROID NATIVE) -->
+                    <div class="project-card flex flex-col justify-between p-6 rounded-2xl bg-gradient-to-b from-card-bg to-darkest border-2 border-accent-cyan/70 hover:border-cyan-400 shadow-xl scroll-reveal h-full">
                         <div>
-                            <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-1 rounded-full w-fit block mb-3">Maquetación &amp; Web</span>
-                            <h3 class="text-xl font-bold text-white mb-2">Landing Page - Descubre Cartagena</h3>
-                            <div class="flex flex-wrap gap-2 mb-3">
-                                <span class="bg-primary-blue/20 text-light-glow text-xs font-medium px-2.5 py-0.5 rounded-full">HTML5 / CSS3</span>
-                                <span class="bg-primary-blue/20 text-light-glow text-xs font-medium px-2.5 py-0.5 rounded-full">Responsive Design</span>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="bg-accent-cyan/20 text-cyan-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-accent-cyan/30">
+                                    <i class="fas fa-mobile-alt mr-1"></i> Android Native
+                                </span>
                             </div>
-                            <p class="text-text-muted text-xs sm:text-sm mb-4 leading-relaxed">
-                                Página de aterrizaje optimizada con estructura semántica, diseño adaptable para dispositivos móviles y navegación intuitiva para usuarios turísticos.
+                            <h3 class="text-2xl font-black text-white mb-2">Farmacol – Mobile App</h3>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="bg-accent-cyan/20 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-md border border-accent-cyan/30">Kotlin</span>
+                                <span class="bg-accent-cyan/20 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-md border border-accent-cyan/30">Jetpack Compose</span>
+                                <span class="bg-accent-cyan/20 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-md border border-accent-cyan/30">Room DB (SQLite)</span>
+                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-1 rounded-md border border-primary-blue/30">MVVM / Coroutines</span>
+                            </div>
+                            <p class="text-text-muted text-xs sm:text-sm mb-6 leading-relaxed">
+                                Aplicación móvil nativa para Android para catálogo y pedido de farmacia. Desarrollada con Kotlin y Jetpack Compose, persistencia local con Room DB (DAOs, Entities), arquitectura MVVM, autenticación de usuarios y gestión del carrito de compras en tiempo real.
                             </p>
                         </div>
+
                         <div>
-                            <div class="overflow-hidden rounded-xl border border-slate-800 mb-4">
-                                <img src="cartagena.png" alt="Cartagena Project" class="w-full h-36 object-cover hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E3A8A/ffffff?text=Descubre+Cartagena'">
+                            <div class="overflow-hidden rounded-xl border border-slate-800 mb-5 bg-darkest/90 aspect-video flex items-center justify-center">
+                                <img src="farmacol.png" 
+                                     alt="Farmacol Android App" 
+                                     class="w-full h-40 object-cover object-top hover:scale-105 transition duration-300" 
+                                     onerror="this.onerror=null; this.src='figma.png'; this.onerror=function(){this.src='https://placehold.co/600x400/06B6D4/ffffff?text=Farmacol+Android+App';};">
                             </div>
-                            <div class="flex gap-4 text-xs font-semibold">
-                                <a href="https://github.com/LuisaR95/Lenguaje-marca" target="_blank" class="text-secondary-magenta hover:underline flex items-center gap-1"><i class="fab fa-github"></i> Ver Código en GitHub</a>
+                            <div class="pt-1">
+                                <a href="https://github.com/LuisaR95/Farmacol" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-3 bg-secondary-magenta/20 hover:bg-secondary-magenta/30 text-secondary-magenta font-bold rounded-lg text-center border border-secondary-magenta/40 transition flex items-center justify-center gap-2 text-xs">
+                                    <i class="fab fa-github text-sm"></i> Ver Código en GitHub
+                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- PROYECTO 3: FARMALOCAL -->
-                    <div class="project-card p-6 rounded-2xl bg-card-bg/80 border border-slate-800 hover:border-secondary-magenta scroll-reveal flex flex-col justify-between">
+                    <!-- PROYECTO 3: CARTAGENA -->
+                    <div class="project-card flex flex-col justify-between p-6 rounded-2xl bg-card-bg/80 border border-slate-800 hover:border-primary-blue shadow-lg scroll-reveal h-full">
                         <div>
-                            <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-semibold px-2.5 py-1 rounded-full w-fit block mb-3">Diseño UI/UX</span>
-                            <h3 class="text-xl font-bold text-white mb-2">Prototipo UI/UX FarmaLocal</h3>
-                            <div class="flex flex-wrap gap-2 mb-3">
-                                <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Figma</span>
-                                <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-medium px-2.5 py-0.5 rounded-full">UI/UX Prototype</span>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="bg-primary-blue/20 text-light-glow text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-primary-blue/30">
+                                    <i class="fas fa-globe mr-1"></i> Web &amp; Responsive
+                                </span>
                             </div>
-                            <p class="text-text-muted text-xs sm:text-sm mb-4 leading-relaxed">
-                                Diseño interactivo para e-commerce farmacéutico local, estructurado para maximizar tasas de conversión y facilitar checkout móvil.
+                            <h3 class="text-2xl font-black text-white mb-2">Descubre Cartagena</h3>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-1 rounded-md border border-primary-blue/30">HTML5 / CSS3</span>
+                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-1 rounded-md border border-primary-blue/30">Responsive Design</span>
+                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-1 rounded-md border border-primary-blue/30">UI Semántica</span>
+                            </div>
+                            <p class="text-text-muted text-xs sm:text-sm mb-6 leading-relaxed">
+                                Página de aterrizaje optimizada con estructura semántica, diseño adaptable para dispositivos móviles y navegación intuitiva para usuarios turísticos. Demuestra buenas prácticas en maquetación web responsive.
                             </p>
                         </div>
+
                         <div>
-                            <div class="overflow-hidden rounded-xl border border-slate-800 mb-4">
-                                <img src="figma.png" alt="FarmaLocal Figma Prototype" class="w-full h-36 object-cover hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/9D174D/ffffff?text=FarmaLocal+UI+UX'">
+                            <div class="overflow-hidden rounded-xl border border-slate-800 mb-5 bg-darkest/90 aspect-video flex items-center justify-center">
+                                <img src="cartagena.png" 
+                                     alt="Cartagena Project" 
+                                     class="w-full h-40 object-cover object-top hover:scale-105 transition duration-300" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E3A8A/ffffff?text=Descubre+Cartagena'">
                             </div>
-                            <div class="flex gap-4 text-xs font-semibold">
-                                <a href="https://www.figma.com/design/g5nzcp5epg5o6ikS81V3nN/Programaci%C3%B3n-multimedia?node-id=29-3&p=f" target="_blank" class="text-secondary-magenta hover:underline flex items-center gap-1"><i class="fas fa-paint-brush"></i> Ver en Figma</a>
+                            <div class="pt-1">
+                                <a href="https://github.com/LuisaR95/Lenguaje-marca" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-3 bg-secondary-magenta/20 hover:bg-secondary-magenta/30 text-secondary-magenta font-bold rounded-lg text-center border border-secondary-magenta/40 transition flex items-center justify-center gap-2 text-xs">
+                                    <i class="fab fa-github text-sm"></i> Ver Código en GitHub
+                                </a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- PROYECTO 4: FARMALOCAL FIGMA UI/UX -->
+                    <div class="project-card flex flex-col justify-between p-6 rounded-2xl bg-card-bg/80 border border-slate-800 hover:border-secondary-magenta shadow-lg scroll-reveal h-full">
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-secondary-magenta/30">
+                                    <i class="fas fa-paint-brush mr-1"></i> Diseño UI/UX
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-black text-white mb-2">Prototipo FarmaLocal</h3>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-semibold px-2.5 py-1 rounded-md border border-secondary-magenta/30">Figma</span>
+                                <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-semibold px-2.5 py-1 rounded-md border border-secondary-magenta/30">UI/UX Prototype</span>
+                                <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-semibold px-2.5 py-1 rounded-md border border-secondary-magenta/30">E-Commerce Flow</span>
+                            </div>
+                            <p class="text-text-muted text-xs sm:text-sm mb-6 leading-relaxed">
+                                Diseño interactivo para e-commerce farmacéutico local en Figma, estructurado para maximizar tasas de conversión y facilitar checkout móvil. Incluye prototipado de pantallas de catálogo, login y pagos interactivos.
+                            </p>
+                        </div>
+
+                        <div>
+                            <div class="overflow-hidden rounded-xl border border-slate-800 mb-5 bg-darkest/90 aspect-video flex items-center justify-center">
+                                <img src="figma.png" 
+                                     alt="FarmaLocal Figma Prototype" 
+                                     class="w-full h-40 object-cover object-top hover:scale-105 transition duration-300" 
+                                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/9D174D/ffffff?text=FarmaLocal+UI+UX'">
+                            </div>
+                            <div class="pt-1">
+                                <a href="https://www.figma.com/design/g5nzcp5epg5o6ikS81V3nN/Programaci%C3%B3n-multimedia?node-id=29-3&p=f" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-3 bg-secondary-magenta/20 hover:bg-secondary-magenta/30 text-secondary-magenta font-bold rounded-lg text-center border border-secondary-magenta/40 transition flex items-center justify-center gap-2 text-xs">
+                                    <i class="fas fa-paint-brush text-sm"></i> Ver en Figma
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -530,7 +597,7 @@
             <div class="max-w-3xl mx-auto glass-panel p-8 md:p-12 text-center">
                 <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-secondary-magenta scroll-reveal">¿Hablamos?</h2>
                 <p class="text-text-muted text-sm sm:text-base mb-8 scroll-reveal">
-                    Estoy disponible para proyectos de desarrollo backend/frontend, analítica de datos o consultoría.
+                    Estoy disponible para proyectos de desarrollo backend, móvil (Android), frontend, analítica de datos o consultoría.
                 </p>
 
                 <form id="contact-form" class="space-y-4 text-left scroll-reveal">
@@ -638,19 +705,19 @@
         const SKILLS = {
             dev: [
                 { name: "Java 21 & Spring Boot", level: 90, color: 'blue' },
+                { name: "Kotlin & Android Native", level: 88, color: 'cyan' },
                 { name: "APIs REST & Microservicios", level: 90, color: 'blue' },
                 { name: "Angular & TypeScript", level: 85, color: 'blue' },
-                { name: "Hibernate / JPA / MapStruct", level: 85, color: 'blue' },
             ],
             data: [
                 { name: "Power BI & Dashboards", level: 95, color: 'magenta' },
-                { name: "SQL (PostgreSQL / Oracle)", level: 90, color: 'magenta' },
+                { name: "SQL (PostgreSQL / Oracle / Room)", level: 90, color: 'magenta' },
                 { name: "Python (Pandas, NumPy)", level: 85, color: 'magenta' },
                 { name: "Procesamiento ETL & KPIs", level: 90, color: 'magenta' },
             ],
             tools: [
-                { name: "JUnit 5 & Mockito", level: 88, color: 'cyan' },
-                { name: "Testcontainers & Mutation Testing", level: 85, color: 'cyan' },
+                { name: "Jetpack Compose & Room DB", level: 88, color: 'cyan' },
+                { name: "JUnit 5, Mockito & Testcontainers", level: 88, color: 'cyan' },
                 { name: "Docker & GCP Pub/Sub", level: 80, color: 'cyan' },
                 { name: "Git / GitLab & IDEs + IA", level: 92, color: 'cyan' },
             ],
@@ -692,7 +759,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             initSkills();
 
-            // Mobile Menu Fix
+            // Mobile Menu
             const btn = document.getElementById('mobile-menu-button');
             const menu = document.getElementById('mobile-menu');
             btn.addEventListener('click', () => {
