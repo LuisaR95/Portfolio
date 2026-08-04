@@ -202,7 +202,7 @@
                     Sobre Mí: <span class="text-secondary-magenta">Sinergia Negocio + Tech + Data</span>
                 </h2>
                 <p class="text-center text-text-muted max-w-3xl mx-auto mb-12 scroll-reveal text-sm sm:text-base">
-                    Mi propuesta de valor radíca en conectar la visión financiera y estratégica empresarial con la solidez técnica del desarrollo de software y la precisión de la analítica de datos.
+                    Mi propuesta de valor radica en conectar la visión financiera y estratégica empresarial con la solidez técnica del desarrollo de software y la precisión de la analítica de datos.
                 </p>
                 
                 <div class="grid md:grid-cols-3 gap-8">
@@ -327,7 +327,7 @@
                             </div>
                         </div>
                         <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-                            <button onclick="openModal()" class="px-5 py-2.5 bg-secondary-magenta hover:bg-pink-600 text-white font-bold rounded-lg text-sm transition flex items-center gap-2">
+                            <button onclick="openModal()" class="px-5 py-2.5 bg-secondary-magenta hover:bg-pink-600 text-white font-bold rounded-lg text-sm transition flex items-center gap-2 shadow-lg shadow-pink-900/30">
                                 <i class="fas fa-file-pdf"></i> Leer Carta Completa
                             </button>
                         </div>
@@ -463,7 +463,7 @@
                         <h3 class="text-xl font-bold text-white border-b border-slate-800 pb-2"><i class="fas fa-award text-secondary-magenta"></i> Certificaciones &amp; Idiomas</h3>
 
                         <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800 space-y-2 text-sm">
-                            <div class="flex items-center gap-2"><i class="fas fa-certificate text-yellow-400"></i> Transformación Digital &amp; Agentes de Cambio (Madrid, 2025)</div
+                            <div class="flex items-center gap-2"><i class="fas fa-certificate text-yellow-400"></i> Transformación Digital &amp; Agentes de Cambio (Madrid, 2025)</div>
                             <div class="flex items-center gap-2"><i class="fas fa-certificate text-yellow-400"></i> IA Generativa Aplicada al Desarrollo</div>
                         </div>
 
@@ -519,27 +519,73 @@
         </footer>
     </main>
 
-    <!-- MODAL RECOMENDACIÓN -->
+    <!-- MODAL RECOMENDACIÓN CON CARTA COMPLETA OFICIAL -->
     <div id="modal-recommendation" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-card-bg border border-slate-700 max-w-2xl w-full rounded-2xl p-6 relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-text-muted hover:text-white text-xl">&times;</button>
-            <h3 class="text-xl font-bold text-secondary-magenta mb-2">Carta de Recomendación – SNGULAR</h3>
-            <p class="text-xs text-text-muted mb-4">Firmado por Carlos Cenjor Ramírez (Mentor &amp; Responsable de Proyecto)</p>
-            <div class="text-xs text-text-light space-y-3 leading-relaxed border-t border-slate-800 pt-3">
-                <p><strong>A quien corresponda:</strong></p>
-                <p>Tengo el agrado de dirigirme a usted con el propósito de expresar mi más sincera y entusiasta recomendación profesional a favor de <strong>Luisa Fernanda Rincón</strong>, quien se ha desempeñado como Ingeniera de Software en Prácticas bajo mi supervisión directa durante el periodo comprendido entre el 2 de marzo de 2026 y el 28 de mayo de 2026 en Sngular.</p>
-                <p>Durante su estancia, Luisa ha participado en proyectos complejos bajo arquitectura de microservicios (Java 21, Spring Boot, MapStruct, Angular, JUnit 5, Mockito, Testcontainers y Mutation Testing)...</p>
-                <p>Destaca por su <strong>Steep Learning Curve</strong>, autonomía, proactividad, sinergia con IA generativa y habilidades interpersonales sobresalientes.</p>
+        <div class="bg-card-bg border border-slate-700 max-w-3xl w-full rounded-2xl p-6 md:p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-text-muted hover:text-white text-2xl font-bold">&times;</button>
+            
+            <div class="border-b border-slate-800 pb-4 mb-4">
+                <span class="text-xs bg-secondary-magenta/20 text-secondary-magenta px-3 py-1 rounded-full font-bold uppercase tracking-wider">Documento Oficial Verificado</span>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-white mt-2">Carta de Recomendación Profesional – SNGULAR</h3>
+                <p class="text-xs text-text-muted mt-1"><i class="fas fa-user-check text-primary-blue mr-1"></i> Firmado por <strong>Carlos Cenjor Ramírez</strong> (Responsable de Proyecto y Mentor en SNGULAR)</p>
             </div>
-            <div class="mt-6 flex justify-end">
-                <button onclick="closeModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-lg text-xs">Cerrar</button>
+
+            <div class="text-xs sm:text-sm text-text-light space-y-4 leading-relaxed bg-darkest/60 p-5 rounded-xl border border-slate-800/80">
+                <p class="font-bold text-white text-sm">CARTA DE RECOMENDACIÓN</p>
+                
+                <p><strong>A quien corresponda:</strong></p>
+                
+                <p>Tengo el agrado de dirigirme a usted con el propósito de expresar mi más sincera y entusiasta recomendación profesional a favor de <strong>Luisa Fernanda Rincón</strong>, quien se ha desempeñado como Ingeniera de Software en Prácticas bajo mi supervisión directa y mentoría durante el periodo comprendido entre el 2 de marzo de 2026 y el 28 de mayo de 2026 en SNGULAR.</p>
+                
+                <p>Durante su estancia en nuestro equipo, Luisa ha participado activamente en proyectos complejos bajo una arquitectura de microservicios, asumiendo con excepcional solvencia responsabilidades tanto de desarrollo Backend como Frontend. Su labor ha abarcado desde el análisis conceptual y la investigación hasta la implementación técnica de primer nivel y su correspondiente aseguramiento de la calidad mediante pruebas automáticas.</p>
+                
+                <div class="pt-2">
+                    <p class="font-bold text-secondary-magenta mb-2">Principales Contribuciones Técnicas y Proyectos:</p>
+                    <ul class="list-disc list-inside space-y-2 pl-2">
+                        <li><strong class="text-white">Desarrollo Backend en Arquitectura de Microservicios:</strong> Implementación robusta de APIs REST utilizando Java 21 y Spring Boot, gestionando la validación estricta de datos y mapeos complejos mediante MapStruct sobre bases de datos relacionales de alta escala, concretamente Oracle y PostgreSQL.</li>
+                        <li><strong class="text-white">Desarrollo Frontend:</strong> Creación e integración de componentes personalizados en frontales de gestión interna utilizando Angular, logrando interfaces dinámicas, reutilizables y de alto rendimiento.</li>
+                        <li><strong class="text-white">Aseguramiento de Calidad y Testing Avanzado:</strong> Desarrollo e implementación exhaustiva de pruebas unitarias con JUnit y Mockito. Asimismo, lideró con total autonomía la investigación e implantación de Testcontainers para mejorar la fidelidad de las pruebas de integración y trabajó activamente en la aplicación de Mutation Testing para medir la resiliencia de la suite de pruebas.</li>
+                        <li><strong class="text-white">Investigación, Spikes Técnicos y Automatización:</strong> Lideró una investigación ("spike") clave para la integración local del servicio de mensajería Google Cloud Pub/Sub, orientada a facilitar las pruebas de integración locales. Además, coordinó de manera brillante la investigación de alternativas de Inteligencia Artificial (IA) y su integración en múltiples entornos de desarrollo (IDEs).</li>
+                        <li><strong class="text-white">Transferencia de Conocimiento:</strong> Preparó e impartió con gran éxito una charla formativa para todo el equipo sobre los resultados y conclusiones de su investigación de herramientas de IA aplicada al desarrollo.</li>
+                        <li><strong class="text-white">Documentación Técnica:</strong> Elaboración minuciosa de manuales de usuario y guías técnicas de onboarding/puesta en marcha para facilitar la incorporación de futuros desarrolladores al proyecto.</li>
+                    </ul>
+                </div>
+
+                <div class="pt-2">
+                    <p class="font-bold text-primary-blue mb-2">Competencias Interpersonales y Aptitudes Clave (Soft Skills):</p>
+                    <ul class="list-disc list-inside space-y-2 pl-2">
+                        <li><strong class="text-white">Capacidad de Aprendizaje Excepcional (Steep Learning Curve):</strong> Demostró una evolución exponencial a lo largo del periodo de prácticas. Especialmente en la segunda mitad del periodo, su agilidad, eficiencia y velocidad de entrega se incrementaron notablemente, adaptándose con fluidez a tecnologías y conceptos avanzados.</li>
+                        <li><strong class="text-white">Autonomía y Proactividad:</strong> Enfrentó múltiples desafíos técnicos con relativa independencia, buscando soluciones alternativas e innovadoras para problemas reales existentes del proyecto y logrando desbloquear tareas críticas para el equipo.</li>
+                        <li><strong class="text-white">Sinergia con la Inteligencia Artificial:</strong> Ha mostrado una magnífica destreza y coordinación con herramientas de IA generativa para maximizar la velocidad y calidad del desarrollo.</li>
+                        <li><strong class="text-white">Comunicación y Trabajo en Equipo:</strong> Su integración en el equipo de SNGULAR fue inmediata. Demostró una comunicación clara, constructiva, con una excelente actitud colaborativa y gran capacidad de coordinación.</li>
+                    </ul>
+                </div>
+
+                <div class="pt-2 border-t border-slate-800">
+                    <p class="font-bold text-white mb-2">Conclusión y Recomendación:</p>
+                    <p>Luisa Fernanda Rincón ha demostrado ser una profesional íntegra, con una mente analítica brillante, un fuerte espíritu de superación y una madurez técnica encomiable. Su proactividad y frescura para proponer alternativas técnicas han aportado un valor real tangible a nuestros proyectos.</p>
+                    <p class="mt-2">Estoy plenamente convencido de que Luisa tiene un futuro sumamente brillante en el desarrollo de software. Será un activo de inestimable valor para cualquier organización o equipo de ingeniería que busque una persona autónoma, de rápido aprendizaje y con sólidas competencias técnicas.</p>
+                    <p class="mt-2">Quedo a su entera disposición para cualquier aclaración o detalle adicional que consideren oportuno.</p>
+                </div>
+
+                <div class="pt-4 text-right border-t border-slate-800">
+                    <p class="font-bold text-white">Carlos Cenjor Ramírez</p>
+                    <p class="text-xs text-text-muted">Responsable de Proyecto y Mentor</p>
+                    <p class="text-xs text-secondary-magenta font-semibold uppercase tracking-wider mt-1">SNGULAR | It can be done.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-between items-center">
+                <a href="Luisa_Fernanda_Rincon_Recomendacion.pdf" target="_blank" download class="text-xs text-secondary-magenta hover:underline font-bold flex items-center gap-1">
+                    <i class="fas fa-download"></i> Descargar PDF Original
+                </a>
+                <button onclick="closeModal()" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-lg text-xs transition">Cerrar</button>
             </div>
         </div>
     </div>
 
     <!-- JAVASCRIPT -->
     <script>
-        // Stack de Habilidades reales del CV
         const SKILLS = {
             dev: [
                 { name: "Java 21 & Spring Boot", level: 90, color: 'blue' },
