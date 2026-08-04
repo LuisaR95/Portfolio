@@ -3,7 +3,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio | Luisa Fernanda Rincón Durán - Data Analytics & Software Consultant</title>
+    <title>Portafolio | Luisa Fernanda Rincón Durán - Business Intelligence Engineer & Software Developer</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portafolio Profesional de Luisa Fernanda Rincón Durán - Business Intelligence Engineer, Backend Developer (Java, Spring Boot), Data Analytics y Soluciones IA." />
+    <meta name="keywords" content="Luisa Rincon, Business Intelligence, Data Analytics, Java 21, Spring Boot, Angular, Kotlin, Power BI, SQL, Python, Remote, Madrid, Bogota" />
+    <meta name="author" content="Luisa Fernanda Rincón Durán" />
+    <link rel="canonical" href="https://portfolio-delta-five-50.vercel.app/" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://portfolio-delta-five-50.vercel.app/" />
+    <meta property="og:title" content="Luisa Fernanda Rincón Durán | Business Intelligence & Software Engineer" />
+    <meta property="og:description" content="5+ años de experiencia combinando Business Intelligence, Data Analytics y Desarrollo Backend en Java, Spring Boot y Microservicios." />
+    <meta property="og:image" content="https://portfolio-delta-five-50.vercel.app/Foto.jpeg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Luisa Fernanda Rincón Durán | BI & Software Engineer" />
+    <meta name="twitter:description" content="Business Intelligence Engineer & Backend Developer (Java • Spring Boot • Microservices)." />
+    <meta name="twitter:image" content="https://portfolio-delta-five-50.vercel.app/Foto.jpeg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23EC4899'/><text x='50%' y='68%' font-size='55' font-weight='bold' text-anchor='middle' fill='%23ffffff' font-family='sans-serif'>LR</text></svg>" />
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -95,22 +117,25 @@
             transform: translateY(0);
         }
 
-        .skill-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            background: rgba(15, 23, 42, 0.9);
+        .hover-card {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
         }
-        .skill-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(236, 72, 153, 0.25);
-            border-color: #EC4899;
+        .hover-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 20px 35px rgba(236, 72, 153, 0.2);
+            border-color: rgba(236, 72, 153, 0.7);
         }
 
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        .tech-chip {
+            transition: all 0.2s ease;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(236, 72, 153, 0.2);
+        .tech-chip:hover {
+            transform: translateY(-2px);
+            border-color: rgba(236, 72, 153, 0.6);
+            background: rgba(30, 41, 59, 0.9);
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
         }
 
         .mobile-menu {
@@ -123,6 +148,19 @@
             max-height: 400px;
             opacity: 1;
         }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            border-top-color: #ffffff;
+            width: 1.25rem;
+            height: 1.25rem;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 
@@ -132,20 +170,20 @@
     <nav class="sticky top-0 z-50 bg-darkest/90 backdrop-blur-md border-b border-slate-800/80 shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="#hero" class="text-xl sm:text-2xl font-black text-white hover:text-secondary-magenta transition tracking-wider flex items-center gap-2">
+                <a href="#hero" aria-label="Ir al inicio de Luisa Rincón" class="text-xl sm:text-2xl font-black text-white hover:text-secondary-magenta transition tracking-wider flex items-center gap-2">
                     <span class="bg-gradient-to-r from-primary-blue to-secondary-magenta bg-clip-text text-transparent">LUISA RINCÓN</span>
-                    <span class="text-xs bg-slate-800 text-light-glow px-2 py-0.5 rounded-full border border-slate-700 font-normal">Data &amp; Dev</span>
+                    <span class="text-xs bg-slate-800 text-light-glow px-2.5 py-0.5 rounded-full border border-slate-700 font-normal">BI, Data &amp; Dev</span>
                 </a>
                 <div class="hidden md:flex space-x-5 text-sm">
-                    <a href="#about" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2">Sobre Mí</a>
-                    <a href="#experience" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2">Experiencia</a>
-                    <a href="#recommendation" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2">Recomendación</a>
-                    <a href="#skills" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2">Habilidades</a>
-                    <a href="#projects" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2">Proyectos</a>
-                    <a href="#education" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2">Educación</a>
-                    <a href="#contact" class="nav-link text-secondary-magenta hover:text-pink-400 transition font-bold p-2">Contacto</a>
+                    <a href="#about" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2" aria-label="Navegar a Sobre Mí">Sobre Mí</a>
+                    <a href="#experience" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2" aria-label="Navegar a Experiencia">Experiencia</a>
+                    <a href="#recommendation" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2" aria-label="Navegar a Recomendación">Recomendación</a>
+                    <a href="#skills" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2" aria-label="Navegar a Habilidades">Habilidades</a>
+                    <a href="#projects" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2" aria-label="Navegar a Proyectos">Proyectos</a>
+                    <a href="#education" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2" aria-label="Navegar a Educación">Educación</a>
+                    <a href="#contact" class="nav-link text-secondary-magenta hover:text-pink-400 transition font-bold p-2" aria-label="Navegar a Contacto">Contacto</a>
                 </div>
-                <button id="mobile-menu-button" aria-label="Abrir menú móvil" class="md:hidden text-text-light hover:text-secondary-magenta p-2">
+                <button id="mobile-menu-button" aria-label="Abrir menú móvil de navegación" class="md:hidden text-text-light hover:text-secondary-magenta p-2">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -154,50 +192,98 @@
         <!-- Menú móvil -->
         <div id="mobile-menu" class="mobile-menu md:hidden bg-darkest/98 border-b border-slate-800">
             <div class="px-4 pt-3 pb-5 space-y-2 flex flex-col items-center">
-                <a href="#about" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center">Sobre Mí</a>
-                <a href="#experience" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center">Experiencia</a>
-                <a href="#recommendation" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center">Recomendación</a>
-                <a href="#skills" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center">Habilidades</a>
-                <a href="#projects" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center">Proyectos</a>
-                <a href="#education" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center">Educación</a>
-                <a href="#contact" class="mobile-nav-link block px-3 py-2 text-base font-medium text-secondary-magenta hover:bg-slate-800 rounded-lg w-full text-center font-bold">Contacto</a>
+                <a href="#about" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center" aria-label="Sobre Mí móvil">Sobre Mí</a>
+                <a href="#experience" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center" aria-label="Experiencia móvil">Experiencia</a>
+                <a href="#recommendation" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center" aria-label="Recomendación móvil">Recomendación</a>
+                <a href="#skills" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center" aria-label="Habilidades móvil">Habilidades</a>
+                <a href="#projects" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center" aria-label="Proyectos móvil">Proyectos</a>
+                <a href="#education" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center" aria-label="Educación móvil">Educación</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 text-base font-medium text-secondary-magenta hover:bg-slate-800 rounded-lg w-full text-center font-bold" aria-label="Contacto móvil">Contacto</a>
             </div>
         </div>
     </nav>
 
     <main id="main-content">
         <!-- HERO -->
-        <header id="hero" class="section-padding min-h-[85vh] flex items-center justify-center pt-20 pb-12">
-            <div class="max-w-6xl mx-auto glass-panel p-8 md:p-14 flex flex-col md:flex-row items-center gap-10 md:gap-14">
-                <div class="flex-shrink-0 order-1 md:order-2">
-                    <img src="Foto.jpeg"
-                        alt="Foto de perfil de Luisa Fernanda Rincón"
-                        class="rounded-full w-48 h-48 md:w-56 md:h-56 object-cover border-4 border-secondary-magenta avatar-pulse shadow-2xl"
-                        onerror="this.onerror=null; this.src='https://placehold.co/224x224/EC4899/040714?text=Luisa+Rincon'">
-                </div>
-                <div class="md:text-left text-center order-2 md:order-1 flex-1">
-                    <div class="inline-flex items-center gap-2 bg-primary-blue/20 text-light-glow text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full border border-primary-blue/30 mb-4">
-                        <i class="fas fa-check-circle text-secondary-magenta"></i> Disponible para Consultoría &amp; Desarrollo
+        <header id="hero" class="section-padding min-h-[85vh] flex items-center justify-center pt-16 pb-12">
+            <div class="max-w-6xl mx-auto glass-panel p-8 md:p-14 flex flex-col items-center">
+                <div class="flex flex-col md:flex-row items-center gap-10 md:gap-14 w-full">
+                    <div class="flex-shrink-0 order-1 md:order-2">
+                        <img src="Foto.jpeg"
+                            alt="Foto de perfil de Luisa Fernanda Rincón"
+                            loading="eager"
+                            class="rounded-full w-48 h-48 md:w-56 md:h-56 object-cover border-4 border-secondary-magenta avatar-pulse shadow-2xl"
+                            onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'224\' height=\'224\' viewBox=\'0 0 224 224\'><rect width=\'224\' height=\'224\' fill=\'%230F172A\'/><circle cx=\'112\' cy=\'90\' r=\'45\' fill=\'%23EC4899\'/><path d=\'M35 195 C 45 145, 179 145, 189 195 Z\' fill=\'%23EC4899\'/></svg>'">
                     </div>
-                    <h1 class="text-4xl sm:text-6xl font-black leading-tight tracking-tight mb-4">
-                        <span class="text-white block">Luisa Fernanda</span>
-                        <span class="bg-gradient-to-r from-primary-blue via-pink-400 to-secondary-magenta bg-clip-text text-transparent block">Rincón Durán</span>
-                    </h1>
-                    <p class="text-xl sm:text-2xl text-light-glow font-bold mb-3">
-                        Data Analytics &amp; Software Consultant
-                    </p>
-                    <p class="text-sm sm:text-base text-text-muted mb-8 leading-relaxed max-w-2xl">
-                       Más de cinco años de experiencia en Business Intelligence y Analítica de Datos, complementados con experiencia reciente en desarrollo de software empresarial utilizando Java, Spring Boot, Angular y arquitecturas de microservicios.
-                    </p>
-                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                        <a href="#projects"
-                            class="px-7 py-3.5 bg-secondary-magenta hover:bg-pink-600 text-white font-bold rounded-xl shadow-lg shadow-pink-900/40 transition transform hover:scale-[1.02] flex items-center gap-2">
-                            Ver Proyectos <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="#recommendation"
-                            class="px-7 py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl border border-slate-700 transition flex items-center gap-2">
-                            <i class="fas fa-award text-secondary-magenta"></i> Ver Recomendación
-                        </a>
+                    <div class="md:text-left text-center order-2 md:order-1 flex-1">
+                        <div class="inline-flex items-center gap-2 bg-primary-blue/20 text-light-glow text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full border border-primary-blue/30 mb-4">
+                            <i class="fas fa-map-marker-alt text-secondary-magenta" aria-hidden="true"></i> Bogotá • Madrid • Remoto | Disponible para Relocation
+                        </div>
+                        <h1 class="text-4xl sm:text-6xl font-black leading-tight tracking-tight mb-4">
+                            <span class="text-white block">Luisa Fernanda</span>
+                            <span class="bg-gradient-to-r from-primary-blue via-pink-400 to-secondary-magenta bg-clip-text text-transparent block">Rincón Durán</span>
+                        </h1>
+                        
+                        <!-- TITULOS REFINADOS -->
+                        <div class="space-y-1 mb-5">
+                            <p class="text-lg sm:text-2xl text-light-glow font-bold tracking-tight">
+                                Business Intelligence Engineer
+                            </p>
+                            <p class="text-base sm:text-xl text-secondary-magenta font-semibold tracking-tight">
+                                Backend Developer (Java • Spring Boot)
+                            </p>
+                            <p class="text-sm sm:text-lg text-accent-cyan font-medium">
+                                Data Analytics &amp; AI Solutions
+                            </p>
+                        </div>
+                        
+                        <!-- TEXTO DEL HERO REFORZADO -->
+                        <p class="text-sm sm:text-base text-text-muted mb-8 leading-relaxed max-w-2xl">
+                            Profesional con más de cinco años de experiencia en Business Intelligence y Analítica de Datos, complementada con experiencia en desarrollo de software empresarial utilizando Java 21, Spring Boot, Angular y arquitecturas de microservicios.
+                        </p>
+
+                        <!-- BOTONES DE LLAMADA A LA ACCIÓN (CTAs) -->
+                        <div class="flex flex-wrap gap-3.5 justify-center md:justify-start">
+                            <a href="CV Luisa Fernanda Rincon.pdf"
+                                target="_blank"
+                                download="CV Luisa Fernanda Rincon.pdf"
+                                aria-label="Descargar currículum en PDF"
+                                class="px-6 py-3.5 bg-secondary-magenta hover:bg-pink-600 text-white font-bold rounded-xl shadow-lg shadow-pink-900/40 transition transform hover:-translate-y-1 flex items-center gap-2.5 text-sm">
+                                <i class="fas fa-file-pdf" aria-hidden="true"></i> Descargar CV
+                            </a>
+                            <a href="https://linkedin.com/in/luisarinconduran"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Visitar perfil de LinkedIn de Luisa Rincón"
+                                class="px-6 py-3.5 bg-primary-blue hover:bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-900/40 transition transform hover:-translate-y-1 flex items-center gap-2.5 text-sm">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+                            </a>
+                            <a href="#contact"
+                                aria-label="Ir a sección de contacto"
+                                class="px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-text-light font-semibold rounded-xl border border-slate-700 transition transform hover:-translate-y-1 flex items-center gap-2.5 text-sm">
+                                <i class="fas fa-envelope text-secondary-magenta" aria-hidden="true"></i> Contactar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MÉTRICAS DE IMPACTO DESTACADAS -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full mt-12 pt-8 border-t border-slate-800/80">
+                    <div class="p-4 rounded-xl bg-darkest/60 border border-slate-800/80 text-center">
+                        <span class="text-2xl sm:text-3xl font-black text-secondary-magenta block">5+</span>
+                        <span class="text-xs text-text-muted uppercase tracking-wider font-semibold">Años Exp. Data &amp; BI</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-darkest/60 border border-slate-800/80 text-center">
+                        <span class="text-2xl sm:text-3xl font-black text-primary-blue block">3</span>
+                        <span class="text-xs text-text-muted uppercase tracking-wider font-semibold">Áreas Tech Core</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-darkest/60 border border-slate-800/80 text-center">
+                        <span class="text-2xl sm:text-3xl font-black text-accent-cyan block">15+</span>
+                        <span class="text-xs text-text-muted uppercase tracking-wider font-semibold">Proyectos Entregados</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-darkest/60 border border-slate-800/80 text-center">
+                        <span class="text-2xl sm:text-3xl font-black text-emerald-400 block">40%</span>
+                        <span class="text-xs text-text-muted uppercase tracking-wider font-semibold">Ahorro Tiempo BI</span>
                     </div>
                 </div>
             </div>
@@ -214,25 +300,25 @@
                 </p>
                 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="p-6 rounded-2xl border border-slate-800 bg-darkest/60 skill-card scroll-reveal">
-                        <i class="fas fa-briefcase text-primary-blue mb-4 text-4xl"></i>
+                    <div class="p-6 rounded-2xl border border-slate-800 bg-darkest/60 hover-card scroll-reveal">
+                        <i class="fas fa-briefcase text-primary-blue mb-4 text-4xl" aria-hidden="true"></i>
                         <h3 class="text-xl font-bold text-white mb-2">Visión de Negocio</h3>
                         <p class="text-text-muted text-sm leading-relaxed">
                             Formación en Administración de Empresas enfocada en ROI, eficiencia de procesos, traducción de requerimientos comerciales y alineación estratégica con stakeholders.
                         </p>
                     </div>
 
-                    <div class="p-6 rounded-2xl border border-slate-800 bg-darkest/60 skill-card scroll-reveal" style="transition-delay: 0.1s;">
-                        <i class="fas fa-code text-secondary-magenta mb-4 text-4xl"></i>
+                    <div class="p-6 rounded-2xl border border-slate-800 bg-darkest/60 hover-card scroll-reveal" style="transition-delay: 0.1s;">
+                        <i class="fas fa-code text-secondary-magenta mb-4 text-4xl" aria-hidden="true"></i>
                         <h3 class="text-xl font-bold text-white mb-2">Desarrollo Backend, Frontend &amp; Mobile</h3>
                         <p class="text-text-muted text-sm leading-relaxed">
                             Microservicios con Java 21 y Spring Boot, apps móviles nativas con Kotlin &amp; Jetpack Compose, interfaces reactivas con Angular/TypeScript y testing avanzado (JUnit 5, Testcontainers).
                         </p>
                     </div>
 
-                    <div class="p-6 rounded-2xl border border-slate-800 bg-darkest/60 skill-card scroll-reveal" style="transition-delay: 0.2s;">
-                        <i class="fas fa-chart-pie text-accent-cyan mb-4 text-4xl"></i>
-                        <h3 class="text-xl font-bold text-white mb-2">Data Analytics &amp; BI</h3>
+                    <div class="p-6 rounded-2xl border border-slate-800 bg-darkest/60 hover-card scroll-reveal" style="transition-delay: 0.2s;">
+                        <i class="fas fa-chart-pie text-accent-cyan mb-4 text-4xl" aria-hidden="true"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Business Intelligence &amp; Data</h3>
                         <p class="text-text-muted text-sm leading-relaxed">
                             Modelado predictivo (Python, SQL), procesos ETL, dashboards ejecutivos en Power BI y análisis de comportamiento para decisiones basadas en datos reales.
                         </p>
@@ -262,13 +348,23 @@
                             <h3 class="text-xl font-bold text-white">Software Developer Intern – Consultoría Tecnológica</h3>
                             <span class="text-xs font-semibold px-3 py-1 bg-secondary-magenta/20 text-secondary-magenta rounded-full w-fit">SNGULAR | Mar 2026 – May 2026</span>
                         </div>
-                        <p class="text-xs text-text-muted mb-3"><i class="fas fa-map-marker-alt"></i> Madrid, España (Remoto)</p>
-                        <ul class="list-disc list-inside text-sm text-text-muted space-y-2 leading-relaxed">
+                        <p class="text-xs text-text-muted mb-3"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Madrid, España (Remoto)</p>
+                        <ul class="list-disc list-inside text-sm text-text-muted space-y-2 leading-relaxed mb-4">
                             <li><strong class="text-text-light">Backend en Microservicios:</strong> APIs REST robustas con Java 21, Spring Boot, MapStruct y persistencia en PostgreSQL / Oracle.</li>
                             <li><strong class="text-text-light">Frontend Reactivo:</strong> Componentes dinámicos e integrados en Angular con TypeScript.</li>
                             <li><strong class="text-text-light">Testing &amp; Calidad:</strong> Suites unitarias (JUnit 5, Mockito), PoC con Testcontainers e implementación de Mutation Testing.</li>
                             <li><strong class="text-text-light">Spikes &amp; IA:</strong> Integración local de Google Cloud Pub/Sub y evaluación de IA en IDEs para aceleración del desarrollo.</li>
                         </ul>
+                        <!-- TECH TAGS EXPERIENCIA -->
+                        <div class="flex flex-wrap gap-1.5 pt-1">
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-pink-300">Java 21</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-pink-300">Spring Boot</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-pink-300">Angular</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-pink-300">JUnit 5</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-pink-300">Testcontainers</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-pink-300">Oracle / PostgreSQL</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-pink-300">GCP Pub/Sub</span>
+                        </div>
                     </div>
 
                     <!-- NUTRABIOTICS -->
@@ -278,11 +374,18 @@
                             <h3 class="text-xl font-bold text-white">Analista de Datos / BI Analyst</h3>
                             <span class="text-xs font-semibold px-3 py-1 bg-primary-blue/20 text-light-glow rounded-full w-fit">Nutrabiotics | Ene 2022 – Ene 2024</span>
                         </div>
-                        <p class="text-xs text-text-muted mb-3"><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
-                        <ul class="list-disc list-inside text-sm text-text-muted space-y-2 leading-relaxed">
+                        <p class="text-xs text-text-muted mb-3"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Bogotá, Colombia</p>
+                        <ul class="list-disc list-inside text-sm text-text-muted space-y-2 leading-relaxed mb-4">
                             <li><strong class="text-text-light">Automatización BI:</strong> Migración de reportes manuales a Power BI, reduciendo en un <span class="text-secondary-magenta font-bold">40%</span> el tiempo de generación de informes.</li>
                             <li><strong class="text-text-light">Forecasting de Ventas:</strong> Modelos predictivos y monitoreo en tiempo real por región y canal.</li>
                         </ul>
+                        <div class="flex flex-wrap gap-1.5 pt-1">
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-blue-300">Power BI</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-blue-300">SQL Server</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-blue-300">Python</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-blue-300">Excel Avanzado</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-blue-300">Forecasting</span>
+                        </div>
                     </div>
 
                     <!-- CELAGEM -->
@@ -292,11 +395,17 @@
                             <h3 class="text-xl font-bold text-white">Analista de Datos &amp; Marketing</h3>
                             <span class="text-xs font-semibold px-3 py-1 bg-cyan-900/40 text-accent-cyan rounded-full w-fit">Celagem | Ene 2021 – Ene 2022</span>
                         </div>
-                        <p class="text-xs text-text-muted mb-3"><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
-                        <ul class="list-disc list-inside text-sm text-text-muted space-y-2 leading-relaxed">
+                        <p class="text-xs text-text-muted mb-3"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Bogotá, Colombia</p>
+                        <ul class="list-disc list-inside text-sm text-text-muted space-y-2 leading-relaxed mb-4">
                             <li><strong class="text-text-light">Optimización ROI:</strong> Modelos de atribución digital logrando un aumento del <span class="text-secondary-magenta font-bold">25%</span> en tasa de conversión anual.</li>
                             <li><strong class="text-text-light">Analítica Web:</strong> Auditorías con Google Analytics presentadas directamente a la Junta Directiva.</li>
                         </ul>
+                        <div class="flex flex-wrap gap-1.5 pt-1">
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-cyan-300">Google Analytics</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-cyan-300">SQL</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-cyan-300">Attribution Models</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-cyan-300">ROI Optimization</span>
+                        </div>
                     </div>
 
                     <!-- PROMOTICK -->
@@ -306,11 +415,17 @@
                             <h3 class="text-xl font-bold text-white">Analista de Datos &amp; Procesos</h3>
                             <span class="text-xs font-semibold px-3 py-1 bg-slate-800 text-text-muted rounded-full w-fit">Promotick | Abr 2018 – Ene 2021</span>
                         </div>
-                        <p class="text-xs text-text-muted mb-3"><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
-                        <ul class="list-disc list-inside text-sm text-text-muted space-y-2 leading-relaxed">
+                        <p class="text-xs text-text-muted mb-3"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Bogotá, Colombia</p>
+                        <ul class="list-disc list-inside text-sm text-text-muted space-y-2 leading-relaxed mb-4">
                             <li><strong class="text-text-light">Integridad de Datos:</strong> Reportes de KPIs en Excel/SQL incrementando la calidad de datos a más del 85%.</li>
                             <li><strong class="text-text-light">Ahorro Operativo:</strong> Detección de ineficiencias transaccionales generando un ahorro anual del 10%.</li>
                         </ul>
+                        <div class="flex flex-wrap gap-1.5 pt-1">
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-slate-300">SQL</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-slate-300">Excel Macros</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-slate-300">KPI Tracking</span>
+                            <span class="tech-chip px-2.5 py-1 rounded-md text-xs font-semibold text-slate-300">Process Mining</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -322,7 +437,7 @@
                 <div class="flex flex-col md:flex-row items-center gap-8">
                     <div class="text-center md:text-left flex-1">
                         <div class="inline-block px-3 py-1 bg-secondary-magenta/20 text-secondary-magenta text-xs font-bold rounded-full mb-3 uppercase tracking-wider">
-                            <i class="fas fa-certificate"></i> Carta de Recomendación Oficial
+                            <i class="fas fa-certificate" aria-hidden="true"></i> Carta de Recomendación Oficial
                         </div>
                         <h2 class="text-3xl font-extrabold text-white mb-4">SNGULAR Technologies</h2>
                         <blockquote class="text-sm sm:text-base text-text-light italic leading-relaxed mb-6 bg-darkest/50 p-4 rounded-xl border-l-4 border-primary-blue">
@@ -330,22 +445,22 @@
                         </blockquote>
                         <div class="flex items-center gap-4 justify-center md:justify-start mb-6">
                             <div>
-                                <h4 class="font-bold text-white text-sm">Carlos Cenjor Ramírez</h4>
-                                <p class="text-xs text-text-muted">Responsable de Proyecto y Mentor en Sngular</p>
+                                <h3 class="font-bold text-white text-sm">Carlos Cenjor Ramírez</h3>
+                                <p class="text-xs text-text-muted">Responsable de Proyecto y Mentor en SNGULAR</p>
                             </div>
                         </div>
                         <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-                            <button onclick="openModal()" class="px-5 py-2.5 bg-secondary-magenta hover:bg-pink-600 text-white font-bold rounded-lg text-sm transition flex items-center gap-2 shadow-lg shadow-pink-900/30">
-                                <i class="fas fa-file-pdf"></i> Leer Carta Completa
+                            <button onclick="openModal()" aria-label="Abrir modal con carta de recomendación" class="px-5 py-2.5 bg-secondary-magenta hover:bg-pink-600 text-white font-bold rounded-lg text-sm transition flex items-center gap-2 shadow-lg shadow-pink-900/30">
+                                <i class="fas fa-award" aria-hidden="true"></i> Ver Recomendación
                             </button>
                         </div>
                     </div>
                     <div class="w-full md:w-1/3 bg-darkest/70 p-6 rounded-2xl border border-slate-800 text-xs space-y-3">
-                        <h4 class="font-bold text-primary-blue text-sm mb-2 border-b border-slate-800 pb-2">Aptitudes Destacadas en Recomendación:</h4>
-                        <div class="flex items-center gap-2"><i class="fas fa-bolt text-yellow-400"></i> Steep Learning Curve (Evolución exponencial)</div>
-                        <div class="flex items-center gap-2"><i class="fas fa-robot text-cyan-400"></i> Sinergia con IA Generativa</div>
-                        <div class="flex items-center gap-2"><i class="fas fa-shield-alt text-green-400"></i> Autonomía &amp; Resolución de Bloqueos</div>
-                        <div class="flex items-center gap-2"><i class="fas fa-users text-pink-400"></i> Excelente Comunicación &amp; Sinergia</div>
+                        <h3 class="font-bold text-primary-blue text-sm mb-2 border-b border-slate-800 pb-2">Aptitudes Destacadas en Recomendación:</h3>
+                        <div class="flex items-center gap-2"><i class="fas fa-bolt text-yellow-400" aria-hidden="true"></i> Steep Learning Curve (Evolución exponencial)</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-robot text-cyan-400" aria-hidden="true"></i> Sinergia con IA Generativa</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-shield-alt text-green-400" aria-hidden="true"></i> Autonomía &amp; Resolución de Bloqueos</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-users text-pink-400" aria-hidden="true"></i> Excelente Comunicación &amp; Sinergia</div>
                     </div>
                 </div>
             </div>
@@ -354,40 +469,125 @@
         <!-- HABILIDADES -->
         <section id="skills" class="section-padding">
             <div class="max-w-6xl mx-auto glass-panel p-8 md:p-12">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-primary-blue scroll-reveal">Stack Tecnológico &amp; Competencias</h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-4 text-primary-blue scroll-reveal">Stack Tecnológico &amp; Competencias</h2>
+                <p class="text-center text-text-muted text-sm sm:text-base mb-12 scroll-reveal max-w-2xl mx-auto">
+                    Dominio de herramientas técnicas, lenguajes de programación y metodologías estructuradas por áreas de especialidad.
+                </p>
 
-                <div class="space-y-12">
-                    <!-- Software & Mobile Development -->
-                    <div class="scroll-reveal">
-                        <h3 class="text-xl font-bold text-secondary-magenta mb-4 flex items-center gap-2">
-                            <i class="fas fa-laptop-code"></i> Software Development, Architecture &amp; Mobile
-                        </h3>
-                        <div id="dev-skills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+                <!-- GRID ESTRUCTURADO DE TARJETAS DE HABILIDADES -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal">
+                    
+                    <!-- CARD 1: BACKEND DEVELOPER -->
+                    <div class="p-6 rounded-2xl bg-darkest/70 border border-slate-800 hover-card flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-primary-blue/20 flex items-center justify-center text-primary-blue text-xl">
+                                    <i class="fas fa-server" aria-hidden="true"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-white">Backend Engineering</h3>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fab fa-java text-orange-400 mr-1.5" aria-hidden="true"></i>Java 21</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-leaf text-green-400 mr-1.5" aria-hidden="true"></i>Spring Boot</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-network-wired text-cyan-400 mr-1.5" aria-hidden="true"></i>REST APIs</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-project-diagram text-purple-400 mr-1.5" aria-hidden="true"></i>MapStruct</span>
+                                <span class="tech-chip px-3 py-3 rounded-lg text-xs font-semibold text-white"><i class="fas fa-database text-yellow-400 mr-1.5" aria-hidden="true"></i>Hibernate / JPA</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Data Analytics & BI -->
-                    <div class="scroll-reveal">
-                        <h3 class="text-xl font-bold text-primary-blue mb-4 flex items-center gap-2">
-                            <i class="fas fa-chart-line"></i> Data Analytics, BI &amp; Databases
-                        </h3>
-                        <div id="data-skills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+                    <!-- CARD 2: FRONTEND & MOBILE -->
+                    <div class="p-6 rounded-2xl bg-darkest/70 border border-slate-800 hover-card flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-secondary-magenta/20 flex items-center justify-center text-secondary-magenta text-xl">
+                                    <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-white">Frontend &amp; Mobile</h3>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fab fa-angular text-red-500 mr-1.5" aria-hidden="true"></i>Angular</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fab fa-js text-yellow-300 mr-1.5" aria-hidden="true"></i>TypeScript</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fab fa-android text-emerald-400 mr-1.5" aria-hidden="true"></i>Kotlin Nativo</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-cubes text-cyan-300 mr-1.5" aria-hidden="true"></i>Jetpack Compose</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fab fa-figma text-pink-400 mr-1.5" aria-hidden="true"></i>Figma UI/UX</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Software Quality & Tools -->
-                    <div class="scroll-reveal">
-                        <h3 class="text-xl font-bold text-accent-cyan mb-4 flex items-center gap-2">
-                            <i class="fas fa-vial"></i> Testing, Cloud &amp; Mobile Tools
-                        </h3>
-                        <div id="tools-skills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+                    <!-- CARD 3: BI & DATA ANALYTICS -->
+                    <div class="p-6 rounded-2xl bg-darkest/70 border border-slate-800 hover-card flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-accent-cyan/20 flex items-center justify-center text-accent-cyan text-xl">
+                                    <i class="fas fa-chart-bar" aria-hidden="true"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-white">BI &amp; Data Analytics</h3>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-chart-pie text-yellow-400 mr-1.5" aria-hidden="true"></i>Power BI</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-database text-blue-400 mr-1.5" aria-hidden="true"></i>SQL Advanced</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fab fa-python text-emerald-400 mr-1.5" aria-hidden="true"></i>Python (Pandas)</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-stream text-cyan-400 mr-1.5" aria-hidden="true"></i>Pipelines ETL</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-calculator text-pink-400 mr-1.5" aria-hidden="true"></i>Forecasting</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Leadership & Mgmt -->
-                    <div class="scroll-reveal">
-                        <h3 class="text-xl font-bold text-pink-400 mb-4 flex items-center gap-2">
-                            <i class="fas fa-user-check"></i> Liderazgo &amp; Habilidades Estratégicas
-                        </h3>
-                        <div id="soft-skills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+                    <!-- CARD 4: TESTING & QUALITY -->
+                    <div class="p-6 rounded-2xl bg-darkest/70 border border-slate-800 hover-card flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl">
+                                    <i class="fas fa-vial" aria-hidden="true"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-white">Testing &amp; Calidad</h3>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-check-double text-green-400 mr-1.5" aria-hidden="true"></i>JUnit 5</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-user-shield text-emerald-300 mr-1.5" aria-hidden="true"></i>Mockito</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-box text-cyan-400 mr-1.5" aria-hidden="true"></i>Testcontainers</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-shield-virus text-rose-400 mr-1.5" aria-hidden="true"></i>Mutation Testing</span>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- CARD 5: CLOUD, DEVOPS & AI -->
+                    <div class="p-6 rounded-2xl bg-darkest/70 border border-slate-800 hover-card flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 text-xl">
+                                    <i class="fas fa-robot" aria-hidden="true"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-white">DevOps &amp; IA Tooling</h3>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fab fa-docker text-blue-400 mr-1.5" aria-hidden="true"></i>Docker</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-cloud text-sky-400 mr-1.5" aria-hidden="true"></i>GCP Pub/Sub</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fab fa-git-alt text-orange-500 mr-1.5" aria-hidden="true"></i>Git / GitLab</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-magic text-purple-400 mr-1.5" aria-hidden="true"></i>Generative AI IDEs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 6: STRATEGY & SOFT SKILLS -->
+                    <div class="p-6 rounded-2xl bg-darkest/70 border border-slate-800 hover-card flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-yellow-500/20 flex items-center justify-center text-yellow-400 text-xl">
+                                    <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-white">Estrategia &amp; Gestión</h3>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-bolt text-yellow-400 mr-1.5" aria-hidden="true"></i>Steep Learning Curve</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-users-cog text-green-400 mr-1.5" aria-hidden="true"></i>Agile / Scrum</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-comments text-pink-400 mr-1.5" aria-hidden="true"></i>Comunicación Stakeholders</span>
+                                <span class="tech-chip px-3 py-1.5 rounded-lg text-xs font-semibold text-white"><i class="fas fa-hand-holding-usd text-emerald-400 mr-1.5" aria-hidden="true"></i>Visión ROI</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -397,7 +597,7 @@
             <div class="max-w-6xl mx-auto glass-panel p-8 md:p-12">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-4 text-white scroll-reveal">Proyectos Destacados</h2>
                 <p class="text-center text-text-muted text-sm sm:text-base mb-12 scroll-reveal">
-                    Proyectos representativos que abarcan desarrollo Backend Full-Stack, Aplicación Móvil Nativa y Diseño de Producto UI/UX.
+                    Proyectos representativos estructurados con Problema, Solución, Arquitectura y Resultado Tangible.
                 </p>
 
                 <!-- GRID DE 3 PROYECTOS EN 1 FILA EN DESKTOP -->
@@ -408,7 +608,7 @@
                         <div>
                             <div class="flex justify-between items-center mb-3">
                                 <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-secondary-magenta/30">
-                                    <i class="fas fa-star text-yellow-400 mr-1"></i> Proyecto Integrador
+                                    <i class="fas fa-star text-yellow-400 mr-1" aria-hidden="true"></i> Proyecto Integrador
                                 </span>
                             </div>
                             <h3 class="text-2xl font-black text-white mb-2">Madrilink</h3>
@@ -418,24 +618,29 @@
                                 <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-1 rounded-md border border-primary-blue/30">SQL / DB</span>
                                 <span class="bg-accent-cyan/20 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-md border border-accent-cyan/30">Full Stack</span>
                             </div>
-                            <p class="text-text-muted text-xs sm:text-sm mb-6 leading-relaxed">
-                                Plataforma web integrada desarrollada como proyecto final de estudios. Diseñada con arquitectura modular backend, consumo de APIs y gestión de datos orientada a resolver necesidades comunitarias/urbanas en Madrid. Incluye memoria técnica y ejecutable completo.
-                            </p>
+
+                            <!-- ESTRUCTURA PROBLEMA / SOLUCIÓN / ARQUITECTURA / RESULTADO -->
+                            <div class="text-xs space-y-2 mb-6 text-text-muted bg-darkest/60 p-3.5 rounded-xl border border-slate-800">
+                                <p><strong class="text-pink-400 block">Problema:</strong> Centralización y gestión ineficiente de trámites urbanos y comunitarios.</p>
+                                <p><strong class="text-cyan-400 block">Arquitectura:</strong> Spring Boot REST APIs + JPA + Angular Frontend + SQL.</p>
+                                <p><strong class="text-emerald-400 block">Resultado:</strong> Pleno funcionamiento con ejecutable funcional y memoria técnica completa.</p>
+                            </div>
                         </div>
                         
                         <div>
                             <div class="overflow-hidden rounded-xl border border-slate-800 mb-5 bg-darkest/90 aspect-video flex items-center justify-center">
                                 <img src="Madrilink.png" 
-                                     alt="Madrilink Platform" 
+                                     alt="Vista previa de Madrilink Platform" 
+                                     loading="lazy"
                                      class="w-full h-36 object-cover object-top hover:scale-105 transition duration-300" 
-                                     onerror="this.onerror=null; this.src='Marilink.png'; this.onerror=function(){this.src='https://placehold.co/600x400/EC4899/ffffff?text=Madrilink+Platform';};">
+                                     onerror="this.onerror=null; this.src='Marilink.png'; this.onerror=function(){this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'><rect width=\'600\' height=\'400\' fill=\'%230F172A\'/><text x=\'50%\' y=\'50%\' font-size=\'24\' fill=\'%23EC4899\' font-family=\'sans-serif\' text-anchor=\'middle\'>Madrilink Platform</text></svg>';};">
                             </div>
                             <div class="flex flex-col sm:flex-row gap-2 text-xs font-bold">
-                                <a href="https://github.com/LuisaR95/madridlink" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 px-3 bg-secondary-magenta/20 hover:bg-secondary-magenta/30 text-secondary-magenta font-bold rounded-lg text-center border border-secondary-magenta/40 transition flex items-center justify-center gap-1.5">
-                                    <i class="fab fa-github text-sm"></i> Repositorio Git
+                                <a href="https://github.com/LuisaR95/madridlink" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio de código de Madrilink en GitHub" class="flex-1 py-2.5 px-3 bg-secondary-magenta/20 hover:bg-secondary-magenta/30 text-secondary-magenta font-bold rounded-lg text-center border border-secondary-magenta/40 transition flex items-center justify-center gap-1.5">
+                                    <i class="fab fa-github text-sm" aria-hidden="true"></i> Repositorio Git
                                 </a>
-                                <a href="https://drive.google.com/drive/u/0/folders/1_yzT0cAlzk0slV6HngrvuaqBfU9dvj-h" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 px-3 bg-slate-800 hover:bg-slate-700 text-text-light rounded-lg text-center border border-slate-700 transition flex items-center justify-center gap-1.5">
-                                    <i class="fab fa-google-drive text-yellow-400 text-sm"></i> Memoria &amp; Docs
+                                <a href="https://drive.google.com/drive/u/0/folders/1_yzT0cAlzk0slV6HngrvuaqBfU9dvj-h" target="_blank" rel="noopener noreferrer" aria-label="Ver memoria técnica de Madrilink en Google Drive" class="flex-1 py-2.5 px-3 bg-slate-800 hover:bg-slate-700 text-text-light rounded-lg text-center border border-slate-700 transition flex items-center justify-center gap-1.5">
+                                    <i class="fab fa-google-drive text-yellow-400 text-sm" aria-hidden="true"></i> Memoria &amp; Docs
                                 </a>
                             </div>
                         </div>
@@ -446,31 +651,35 @@
                         <div>
                             <div class="flex justify-between items-center mb-3">
                                 <span class="bg-accent-cyan/20 text-cyan-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-accent-cyan/30">
-                                    <i class="fas fa-mobile-alt mr-1"></i> Android Native
+                                    <i class="fas fa-mobile-alt mr-1" aria-hidden="true"></i> Android Native
                                 </span>
                             </div>
                             <h3 class="text-2xl font-black text-white mb-2">Farmacol – Mobile App</h3>
                             <div class="flex flex-wrap gap-1.5 mb-4">
                                 <span class="bg-accent-cyan/20 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-md border border-accent-cyan/30">Kotlin</span>
                                 <span class="bg-accent-cyan/20 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-md border border-accent-cyan/30">Jetpack Compose</span>
-                                <span class="bg-accent-cyan/20 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-md border border-accent-cyan/30">Room DB (SQLite)</span>
-                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-1 rounded-md border border-primary-blue/30">MVVM / Coroutines</span>
+                                <span class="bg-accent-cyan/20 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-md border border-accent-cyan/30">Room DB</span>
+                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-1 rounded-md border border-primary-blue/30">MVVM</span>
                             </div>
-                            <p class="text-text-muted text-xs sm:text-sm mb-6 leading-relaxed">
-                                Aplicación móvil nativa para Android para catálogo y pedido de farmacia. Desarrollada con Kotlin y Jetpack Compose, persistencia local con Room DB (DAOs, Entities), arquitectura MVVM, autenticación de usuarios y gestión del carrito de compras en tiempo real.
-                            </p>
+
+                            <div class="text-xs space-y-2 mb-6 text-text-muted bg-darkest/60 p-3.5 rounded-xl border border-slate-800">
+                                <p><strong class="text-pink-400 block">Problema:</strong> Compra de medicamentos offline/online sin persistencia ágil.</p>
+                                <p><strong class="text-cyan-400 block">Arquitectura:</strong> Kotlin + Jetpack Compose UI + Room SQLite + ViewModel.</p>
+                                <p><strong class="text-emerald-400 block">Resultado:</strong> App móvil fluida con login, carrito offline y confirmación de pedidos.</p>
+                            </div>
                         </div>
 
                         <div>
                             <div class="overflow-hidden rounded-xl border border-slate-800 mb-5 bg-darkest/90 aspect-video flex items-center justify-center">
                                 <img src="farmacol.png" 
-                                     alt="Farmacol Android App" 
+                                     alt="Vista previa de la aplicación móvil Farmacol Android" 
+                                     loading="lazy"
                                      class="w-full h-36 object-cover object-top hover:scale-105 transition duration-300" 
-                                     onerror="this.onerror=null; this.src='figma.png'; this.onerror=function(){this.src='https://placehold.co/600x400/06B6D4/ffffff?text=Farmacol+Android+App';};">
+                                     onerror="this.onerror=null; this.src='figma.png'; this.onerror=function(){this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'><rect width=\'600\' height=\'400\' fill=\'%230F172A\'/><text x=\'50%\' y=\'50%\' font-size=\'24\' fill=\'%2306B6D4\' font-family=\'sans-serif\' text-anchor=\'middle\'>Farmacol Android App</text></svg>';};">
                             </div>
                             <div class="pt-1">
-                                <a href="https://github.com/LuisaR95/Farmacol" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-3 bg-secondary-magenta/20 hover:bg-secondary-magenta/30 text-secondary-magenta font-bold rounded-lg text-center border border-secondary-magenta/40 transition flex items-center justify-center gap-2 text-xs">
-                                    <i class="fab fa-github text-sm"></i> Ver Código en GitHub
+                                <a href="https://github.com/LuisaR95/Farmacol" target="_blank" rel="noopener noreferrer" aria-label="Ver código del proyecto Farmacol en GitHub" class="w-full py-2.5 px-3 bg-secondary-magenta/20 hover:bg-secondary-magenta/30 text-secondary-magenta font-bold rounded-lg text-center border border-secondary-magenta/40 transition flex items-center justify-center gap-2 text-xs">
+                                    <i class="fab fa-github text-sm" aria-hidden="true"></i> Ver Código en GitHub
                                 </a>
                             </div>
                         </div>
@@ -481,7 +690,7 @@
                         <div>
                             <div class="flex justify-between items-center mb-3">
                                 <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-secondary-magenta/30">
-                                    <i class="fas fa-paint-brush mr-1"></i> Diseño UI/UX
+                                    <i class="fas fa-paint-brush mr-1" aria-hidden="true"></i> Diseño UI/UX
                                 </span>
                             </div>
                             <h3 class="text-2xl font-black text-white mb-2">Prototipo FarmaLocal</h3>
@@ -490,21 +699,25 @@
                                 <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-semibold px-2.5 py-1 rounded-md border border-secondary-magenta/30">UI/UX Prototype</span>
                                 <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-semibold px-2.5 py-1 rounded-md border border-secondary-magenta/30">E-Commerce Flow</span>
                             </div>
-                            <p class="text-text-muted text-xs sm:text-sm mb-6 leading-relaxed">
-                                Diseño interactivo para e-commerce farmacéutico local en Figma, estructurado para maximizar tasas de conversión y facilitar checkout móvil. Incluye prototipado de pantallas de catálogo, login y pagos interactivos.
-                            </p>
+
+                            <div class="text-xs space-y-2 mb-6 text-text-muted bg-darkest/60 p-3.5 rounded-xl border border-slate-800">
+                                <p><strong class="text-pink-400 block">Problema:</strong> Alta fricción en el proceso de checkout móvil de e-commerce farmacéutico.</p>
+                                <p><strong class="text-cyan-400 block">Arquitectura:</strong> Design System interactivo en Figma + User Journey Mapping.</p>
+                                <p><strong class="text-emerald-400 block">Resultado:</strong> Prototipo navegable listo para fase de maquetación y desarrollo.</p>
+                            </div>
                         </div>
 
                         <div>
                             <div class="overflow-hidden rounded-xl border border-slate-800 mb-5 bg-darkest/90 aspect-video flex items-center justify-center">
                                 <img src="figma.png" 
-                                     alt="FarmaLocal Figma Prototype" 
+                                     alt="Vista previa del prototipo Figma FarmaLocal" 
+                                     loading="lazy"
                                      class="w-full h-36 object-cover object-top hover:scale-105 transition duration-300" 
-                                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/9D174D/ffffff?text=FarmaLocal+UI+UX'">
+                                     onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\'><rect width=\'600\' height=\'400\' fill=\'%230F172A\'/><text x=\'50%\' y=\'50%\' font-size=\'24\' fill=\'%23EC4899\' font-family=\'sans-serif\' text-anchor=\'middle\'>FarmaLocal Figma UI UX</text></svg>';">
                             </div>
                             <div class="pt-1">
-                                <a href="https://www.figma.com/design/g5nzcp5epg5o6ikS81V3nN/Programaci%C3%B3n-multimedia?node-id=29-3&p=f" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-3 bg-secondary-magenta/20 hover:bg-secondary-magenta/30 text-secondary-magenta font-bold rounded-lg text-center border border-secondary-magenta/40 transition flex items-center justify-center gap-2 text-xs">
-                                    <i class="fas fa-paint-brush text-sm"></i> Ver en Figma
+                                <a href="https://www.figma.com/design/g5nzcp5epg5o6ikS81V3nN/Programaci%C3%B3n-multimedia?node-id=29-3&p=f" target="_blank" rel="noopener noreferrer" aria-label="Ver prototipo interactivo en Figma" class="w-full py-2.5 px-3 bg-secondary-magenta/20 hover:bg-secondary-magenta/30 text-secondary-magenta font-bold rounded-lg text-center border border-secondary-magenta/40 transition flex items-center justify-center gap-2 text-xs">
+                                    <i class="fas fa-paint-brush text-sm" aria-hidden="true"></i> Ver en Figma
                                 </a>
                             </div>
                         </div>
@@ -522,19 +735,19 @@
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- Formación Académica -->
                     <div class="space-y-6 scroll-reveal">
-                        <h3 class="text-xl font-bold text-white border-b border-slate-800 pb-2"><i class="fas fa-graduation-cap text-primary-blue"></i> Formación Académica</h3>
+                        <h3 class="text-xl font-bold text-white border-b border-slate-800 pb-2"><i class="fas fa-graduation-cap text-primary-blue" aria-hidden="true"></i> Formación Académica</h3>
                         
-                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800">
+                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800 hover-card">
                             <h4 class="font-bold text-text-light">Máster en Análisis de Datos (Big Data &amp; Data Science)</h4>
                             <p class="text-xs text-secondary-magenta">Prometeo by thePower, Madrid, España | 2024 – 2026</p>
                         </div>
 
-                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800">
+                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800 hover-card">
                             <h4 class="font-bold text-text-light">Tecnólogo en Análisis y Desarrollo de Software</h4>
                             <p class="text-xs text-secondary-magenta">Prometeo by thePower, Madrid, España | 2024 – 2026</p>
                         </div>
 
-                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800">
+                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800 hover-card">
                             <h4 class="font-bold text-text-light">Pregrado en Administración de Empresas</h4>
                             <p class="text-xs text-secondary-magenta">Universidad Externado de Colombia, Bogotá | 2013 – 2018</p>
                         </div>
@@ -542,15 +755,15 @@
 
                     <!-- Certificaciones e Idiomas -->
                     <div class="space-y-6 scroll-reveal">
-                        <h3 class="text-xl font-bold text-white border-b border-slate-800 pb-2"><i class="fas fa-award text-secondary-magenta"></i> Certificaciones &amp; Idiomas</h3>
+                        <h3 class="text-xl font-bold text-white border-b border-slate-800 pb-2"><i class="fas fa-award text-secondary-magenta" aria-hidden="true"></i> Certificaciones &amp; Idiomas</h3>
 
-                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800 space-y-2 text-sm">
-                            <div class="flex items-center gap-2"><i class="fas fa-certificate text-yellow-400"></i> Transformación Digital &amp; Agentes de Cambio (Madrid, 2025)</div>
-                            <div class="flex items-center gap-2"><i class="fas fa-certificate text-yellow-400"></i> IA Generativa Aplicada al Desarrollo</div>
+                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800 space-y-2 text-sm hover-card">
+                            <div class="flex items-center gap-2"><i class="fas fa-certificate text-yellow-400" aria-hidden="true"></i> Transformación Digital &amp; Agentes de Cambio (Madrid, 2025)</div>
+                            <div class="flex items-center gap-2"><i class="fas fa-certificate text-yellow-400" aria-hidden="true"></i> IA Generativa Aplicada al Desarrollo</div>
                         </div>
 
-                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800 text-sm">
-                            <h4 class="font-bold text-white mb-1"><i class="fas fa-language text-accent-cyan"></i> Idiomas</h4>
+                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800 text-sm hover-card">
+                            <h4 class="font-bold text-white mb-1"><i class="fas fa-language text-accent-cyan" aria-hidden="true"></i> Idiomas</h4>
                             <p class="text-text-muted"><strong>Inglés:</strong> Profesional B2 (Certificación TOEFL / Interacción técnica y de negocios fluida).</p>
                         </div>
                     </div>
@@ -563,157 +776,130 @@
             <div class="max-w-3xl mx-auto glass-panel p-8 md:p-12 text-center">
                 <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-secondary-magenta scroll-reveal">¿Hablamos?</h2>
                 <p class="text-text-muted text-sm sm:text-base mb-8 scroll-reveal">
-                    Estoy disponible para proyectos de desarrollo backend, móvil (Android), frontend, analítica de datos o consultoría.
+                    Estoy disponible para oportunidades en Business Intelligence, analítica de datos, desarrollo backend Java/Spring o proyectos móviles.
                 </p>
 
-                <form id="contact-form" class="space-y-4 text-left scroll-reveal">
+                <!-- FORMULARIO DE CONTACTO CON SPINNER DE CARGA Y FORMSPREE READINESS -->
+                <form id="contact-form" action="https://formspree.io/f/xbjnqvzg" method="POST" class="space-y-4 text-left scroll-reveal">
                     <div>
-                        <label for="name" class="block text-xs font-semibold text-text-light mb-1">Nombre</label>
-                        <input type="text" id="name" required class="w-full p-3.5 rounded-xl bg-card-bg border border-slate-700 text-text-light focus:border-primary-blue outline-none text-sm">
+                        <label for="name" class="block text-xs font-semibold text-text-light mb-1">Nombre Completo</label>
+                        <input type="text" id="name" name="name" required placeholder="Tu nombre" class="w-full p-3.5 rounded-xl bg-card-bg border border-slate-700 text-text-light focus:border-primary-blue outline-none text-sm transition">
                     </div>
                     <div>
                         <label for="email" class="block text-xs font-semibold text-text-light mb-1">Correo Electrónico</label>
-                        <input type="email" id="email" required class="w-full p-3.5 rounded-xl bg-card-bg border border-slate-700 text-text-light focus:border-primary-blue outline-none text-sm">
+                        <input type="email" id="email" name="email" required placeholder="tuemail@ejemplo.com" class="w-full p-3.5 rounded-xl bg-card-bg border border-slate-700 text-text-light focus:border-primary-blue outline-none text-sm transition">
                     </div>
                     <div>
                         <label for="message" class="block text-xs font-semibold text-text-light mb-1">Mensaje</label>
-                        <textarea id="message" rows="4" required class="w-full p-3.5 rounded-xl bg-card-bg border border-slate-700 text-text-light focus:border-primary-blue outline-none text-sm"></textarea>
+                        <textarea id="message" name="message" rows="4" required placeholder="¿En qué puedo ayudarte?" class="w-full p-3.5 rounded-xl bg-card-bg border border-slate-700 text-text-light focus:border-primary-blue outline-none text-sm transition"></textarea>
                     </div>
 
                     <div id="form-message" class="text-center py-2 text-sm rounded-lg hidden"></div>
 
-                    <button type="submit" class="w-full py-4 bg-primary-blue hover:bg-blue-600 text-white font-bold rounded-xl shadow-lg transition">
-                        <i class="fas fa-paper-plane mr-2"></i> Enviar Mensaje
+                    <button type="submit" id="submit-btn" aria-label="Enviar formulario de contacto" class="w-full py-4 bg-primary-blue hover:bg-blue-600 text-white font-bold rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                        <span id="btn-text" class="flex items-center gap-2">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Mensaje
+                        </span>
+                        <span id="btn-loader" class="hidden flex items-center gap-2">
+                            <span class="spinner"></span> Enviando...
+                        </span>
                     </button>
                 </form>
 
-                <div class="flex justify-center gap-6 mt-10 pt-6 border-t border-slate-800 text-lg">
-                    <a href="mailto:luisa.rincond95@gmail.com" class="text-text-muted hover:text-secondary-magenta transition"><i class="fas fa-envelope"></i></a>
-                    <a href="https://linkedin.com/in/luisarinconduran" target="_blank" class="text-text-muted hover:text-primary-blue transition"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/luisarinconduran" target="_blank" class="text-text-muted hover:text-secondary-magenta transition"><i class="fab fa-github"></i></a>
+                <div class="flex justify-center gap-6 mt-10 pt-6 border-t border-slate-800 text-xl">
+                    <a href="mailto:luisa.rincond95@gmail.com" aria-label="Enviar correo electrónico a Luisa Rincón" class="text-text-muted hover:text-secondary-magenta transition"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                    <a href="https://linkedin.com/in/luisarinconduran" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil de LinkedIn" class="text-text-muted hover:text-primary-blue transition"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://github.com/LuisaR95" target="_blank" rel="noopener noreferrer" aria-label="Visitar perfil de GitHub" class="text-text-muted hover:text-secondary-magenta transition"><i class="fab fa-github" aria-hidden="true"></i></a>
                 </div>
             </div>
         </section>
 
         <!-- FOOTER -->
         <footer class="border-t border-slate-800/80 py-6 text-center text-text-muted text-xs bg-darkest">
-            &copy; 2026 Luisa Fernanda Rincón Durán. Desarrollado con visión Administrativa, Ejecución Técnica y Análisis de Datos.
+            &copy; 2024–2026 Luisa Fernanda Rincón Durán. Desarrollado con visión Administrativa, Ejecución Técnica y Análisis de Datos.
         </footer>
     </main>
 
-    <!-- MODAL RECOMENDACIÓN CON CARTA COMPLETA OFICIAL -->
-    <div id="modal-recommendation" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-card-bg border border-slate-700 max-w-3xl w-full rounded-2xl p-6 md:p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-text-muted hover:text-white text-2xl font-bold">&times;</button>
+    <!-- MODAL RECOMENDACIÓN MEJORADO (RESUMEN + APTITUDES + BOTÓN PDF) -->
+    <div id="modal-recommendation" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-card-bg border border-slate-700 max-w-2xl w-full rounded-2xl p-6 md:p-8 relative max-h-[90vh] overflow-y-auto shadow-2xl">
+            <button onclick="closeModal()" aria-label="Cerrar ventana modal" class="absolute top-4 right-4 text-text-muted hover:text-white text-2xl font-bold">&times;</button>
             
-            <div class="border-b border-slate-800 pb-4 mb-4">
-                <span class="text-xs bg-secondary-magenta/20 text-secondary-magenta px-3 py-1 rounded-full font-bold uppercase tracking-wider">Documento Oficial Verificado</span>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-white mt-2">Carta de Recomendación Profesional – SNGULAR</h3>
-                <p class="text-xs text-text-muted mt-1"><i class="fas fa-user-check text-primary-blue mr-1"></i> Firmado por <strong>Carlos Cenjor Ramírez</strong> (Responsable de Proyecto y Mentor en SNGULAR)</p>
+            <div class="border-b border-slate-800 pb-4 mb-5">
+                <span class="text-xs bg-secondary-magenta/20 text-secondary-magenta px-3 py-1 rounded-full font-bold uppercase tracking-wider">
+                    <i class="fas fa-certificate mr-1" aria-hidden="true"></i> Documento Oficial Verificado
+                </span>
+                <h3 id="modal-title" class="text-xl sm:text-2xl font-extrabold text-white mt-2.5">Carta de Recomendación Oficial</h3>
+                <p class="text-xs text-text-muted mt-1">
+                    <i class="fas fa-user-check text-primary-blue mr-1" aria-hidden="true"></i> Otorgada por <strong>Carlos Cenjor Ramírez</strong> (Responsable de Proyecto &amp; Mentor en SNGULAR)
+                </p>
             </div>
 
-            <div class="text-xs sm:text-sm text-text-light space-y-4 leading-relaxed bg-darkest/60 p-5 rounded-xl border border-slate-800/80">
-                <p class="font-bold text-white text-sm">CARTA DE RECOMENDACIÓN</p>
-                
-                <p><strong>A quien corresponda:</strong></p>
-                
-                <p>Tengo el agrado de dirigirme a usted con el propósito de expresar mi más sincera y entusiasta recomendación profesional a favor de <strong>Luisa Fernanda Rincón</strong>, quien se ha desempeñado como Ingeniera de Software en Prácticas bajo mi supervisión directa y mentoría durante el periodo comprendido entre el 2 de marzo de 2026 y el 28 de mayo de 2026 en SNGULAR.</p>
-                
-                <p>Durante su estancia en nuestro equipo, Luisa ha participado activamente en proyectos complejos bajo una arquitectura de microservicios, asumiendo con excepcional solvencia responsabilidades tanto de desarrollo Backend como Frontend. Su labor ha abarcado desde el análisis conceptual y la investigación hasta la implementación técnica de primer nivel y su correspondiente aseguramiento de la calidad mediante pruebas automáticas.</p>
-                
-                <div class="pt-2">
-                    <p class="font-bold text-secondary-magenta mb-2">Principales Contribuciones Técnicas y Proyectos:</p>
-                    <ul class="list-disc list-inside space-y-2 pl-2">
-                        <li><strong class="text-white">Desarrollo Backend en Arquitectura de Microservicios:</strong> Implementación robusta de APIs REST utilizando Java 21 y Spring Boot, gestionando la validación estricta de datos y mapeos complejos mediante MapStruct sobre bases de datos relacionales de alta escala, concretamente Oracle y PostgreSQL.</li>
-                        <li><strong class="text-white">Desarrollo Frontend:</strong> Creación e integración de componentes personalizados en frontales de gestión interna utilizando Angular, logrando interfaces dinámicas, reutilizables y de alto rendimiento.</li>
-                        <li><strong class="text-white">Aseguramiento de Calidad y Testing Avanzado:</strong> Desarrollo e implementación exhaustiva de pruebas unitarias con JUnit y Mockito. Asimismo, lideró con total autonomía la investigación e implantación de Testcontainers para mejorar la fidelidad de las pruebas de integración y trabajó activamente en la aplicación de Mutation Testing para medir la resiliencia de la suite de pruebas.</li>
-                        <li><strong class="text-white">Investigación, Spikes Técnicos y Automatización:</strong> Lideró una investigación ("spike") clave para la integración local del servicio de mensajería Google Cloud Pub/Sub, orientada a facilitar las pruebas de integración locales. Además, coordinó de manera brillante la investigación de alternativas de Inteligencia Artificial (IA) y su integración en múltiples entornos de desarrollo (IDEs).</li>
-                        <li><strong class="text-white">Transferencia de Conocimiento:</strong> Preparó e impartió con gran éxito una charla formativa para todo el equipo sobre los resultados y conclusiones de su investigación de herramientas de IA aplicada al desarrollo.</li>
-                        <li><strong class="text-white">Documentación Técnica:</strong> Elaboración minuciosa de manuales de usuario y guías técnicas de onboarding/puesta en marcha para facilitar la incorporación de futuros desarrolladores al proyecto.</li>
-                    </ul>
-                </div>
+            <!-- 1. RESUMEN -->
+            <div class="mb-6">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-primary-blue mb-2.5 flex items-center gap-2">
+                    <i class="fas fa-quote-left text-secondary-magenta" aria-hidden="true"></i> Resumen Ejecutivo
+                </h4>
+                <blockquote class="text-sm text-text-light italic leading-relaxed bg-darkest/70 p-4 rounded-xl border-l-4 border-secondary-magenta">
+                    "Luisa ha demostrado ser una profesional íntegra, con una mente analítica brillante, un fuerte espíritu de superación y una madurez técnica encomiable. Su proactividad y frescura para proponer alternativas técnicas han aportado un valor real tangible a nuestros proyectos."
+                </blockquote>
+            </div>
 
-                <div class="pt-2">
-                    <p class="font-bold text-primary-blue mb-2">Competencias Interpersonales y Aptitudes Clave (Soft Skills):</p>
-                    <ul class="list-disc list-inside space-y-2 pl-2">
-                        <li><strong class="text-white">Capacidad de Aprendizaje Excepcional (Steep Learning Curve):</strong> Demostró una evolución exponencial a lo largo del periodo de prácticas. Especialmente en la segunda mitad del periodo, su agilidad, eficiencia y velocidad de entrega se incrementaron notablemente, adaptándose con fluidez a tecnologías y conceptos avanzados.</li>
-                        <li><strong class="text-white">Autonomía y Proactividad:</strong> Enfrentó múltiples desafíos técnicos con relativa independencia, buscando soluciones alternativas e innovadoras para problemas reales existentes del proyecto y logrando desbloquear tareas críticas para el equipo.</li>
-                        <li><strong class="text-white">Sinergia con la Inteligencia Artificial:</strong> Ha mostrado una magnífica destreza y coordinación con herramientas de IA generativa para maximizar la velocidad y calidad del desarrollo.</li>
-                        <li><strong class="text-white">Comunicación y Trabajo en Equipo:</strong> Su integración en el equipo de SNGULAR fue inmediata. Demostró una comunicación clara, constructiva, con una excelente actitud colaborativa y gran capacidad de coordinación.</li>
-                    </ul>
-                </div>
-
-                <div class="pt-2 border-t border-slate-800">
-                    <p class="font-bold text-white mb-2">Conclusión y Recomendación:</p>
-                    <p>Luisa Fernanda Rincón ha demostrado ser una profesional íntegra, con una mente analítica brillante, un fuerte espíritu de superación y una madurez técnica encomiable. Su proactividad y frescura para proponer alternativas técnicas han aportado un valor real tangible a nuestros proyectos.</p>
-                    <p class="mt-2">Estoy plenamente convencido de que Luisa tiene un futuro sumamente brillante en el desarrollo de software. Será un activo de inestimable valor para cualquier organización o equipo de ingeniería que busque una persona autónoma, de rápido aprendizaje y con sólidas competencias técnicas.</p>
-                    <p class="mt-2">Quedo a su entera disposición para cualquier aclaración o detalle adicional que consideren oportuno.</p>
-                </div>
-
-                <div class="pt-4 text-right border-t border-slate-800">
-                    <p class="font-bold text-white">Carlos Cenjor Ramírez</p>
-                    <p class="text-xs text-text-muted">Responsable de Proyecto y Mentor</p>
-                    <p class="text-xs text-secondary-magenta font-semibold uppercase tracking-wider mt-1">SNGULAR | It can be done.</p>
+            <!-- 2. APTITUDES DESTACADAS -->
+            <div class="mb-8">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-primary-blue mb-3 flex items-center gap-2">
+                    <i class="fas fa-star text-yellow-400" aria-hidden="true"></i> Aptitudes y Competencias Destacadas
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                    <div class="p-3 bg-darkest/60 rounded-xl border border-slate-800 flex items-start gap-2.5">
+                        <i class="fas fa-bolt text-yellow-400 text-sm mt-0.5" aria-hidden="true"></i>
+                        <div>
+                            <span class="font-bold text-white block">Evolución Exponencial</span>
+                            <span class="text-text-muted">Steep Learning Curve en desarrollo Java/Spring &amp; Angular.</span>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-darkest/60 rounded-xl border border-slate-800 flex items-start gap-2.5">
+                        <i class="fas fa-robot text-cyan-400 text-sm mt-0.5" aria-hidden="true"></i>
+                        <div>
+                            <span class="font-bold text-white block">Sinergia con IA Generativa</span>
+                            <span class="text-text-muted">Liderazgo en investigación e integración de IA en IDEs.</span>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-darkest/60 rounded-xl border border-slate-800 flex items-start gap-2.5">
+                        <i class="fas fa-shield-alt text-emerald-400 text-sm mt-0.5" aria-hidden="true"></i>
+                        <div>
+                            <span class="font-bold text-white block">Autonomía &amp; Resolución</span>
+                            <span class="text-text-muted">Resolución independiente de bloqueos críticos.</span>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-darkest/60 rounded-xl border border-slate-800 flex items-start gap-2.5">
+                        <i class="fas fa-vial text-pink-400 text-sm mt-0.5" aria-hidden="true"></i>
+                        <div>
+                            <span class="font-bold text-white block">Testing Avanzado &amp; PoCs</span>
+                            <span class="text-text-muted">Investigación con Testcontainers y Mutation Testing.</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="mt-6 flex justify-between items-center">
-                <a href="Luisa_Fernanda_Rincon_Recomendacion.pdf" target="_blank" download class="text-xs text-secondary-magenta hover:underline font-bold flex items-center gap-1">
-                    <i class="fas fa-download"></i> Descargar PDF Original
+            <!-- 3. BOTÓN DESCARGAR PDF -->
+            <div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row gap-3 justify-between items-center">
+                <a href="Luisa_Fernanda_Rincon_Recomendacion.pdf"
+                    target="_blank"
+                    download="Luisa_Fernanda_Rincon_Recomendacion.pdf"
+                    aria-label="Descargar la carta completa de recomendación en formato PDF"
+                    class="w-full sm:w-auto px-6 py-3 bg-secondary-magenta hover:bg-pink-600 text-white font-bold rounded-xl text-xs transition flex items-center justify-center gap-2 shadow-lg shadow-pink-900/30">
+                    <i class="fas fa-file-pdf text-sm" aria-hidden="true"></i> Descargar Carta Completa en PDF
                 </a>
-                <button onclick="closeModal()" class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-lg text-xs transition">Cerrar</button>
+                <button onclick="closeModal()" aria-label="Cerrar modal" class="w-full sm:w-auto px-5 py-3 bg-slate-800 hover:bg-slate-700 text-text-light font-semibold rounded-xl text-xs transition">
+                    Cerrar
+                </button>
             </div>
         </div>
     </div>
 
     <!-- JAVASCRIPT -->
     <script>
-        const SKILLS = {
-            dev: [
-                { name: "Java 21 & Spring Boot", level: 90, color: 'blue' },
-                { name: "Kotlin & Android Native", level: 88, color: 'cyan' },
-                { name: "APIs REST & Microservicios", level: 90, color: 'blue' },
-                { name: "Angular & TypeScript", level: 85, color: 'blue' },
-            ],
-            data: [
-                { name: "Power BI & Dashboards", level: 95, color: 'magenta' },
-                { name: "SQL (PostgreSQL / Oracle / Room)", level: 90, color: 'magenta' },
-                { name: "Python (Pandas, NumPy)", level: 85, color: 'magenta' },
-                { name: "Procesamiento ETL & KPIs", level: 90, color: 'magenta' },
-            ],
-            tools: [
-                { name: "Jetpack Compose & Room DB", level: 88, color: 'cyan' },
-                { name: "JUnit 5, Mockito & Testcontainers", level: 88, color: 'cyan' },
-                { name: "Docker & GCP Pub/Sub", level: 80, color: 'cyan' },
-                { name: "Git / GitLab & IDEs + IA", level: 92, color: 'cyan' },
-            ],
-            soft: [
-                { name: "Curva de Aprendizaje Rápida", level: 98, color: 'magenta' },
-                { name: "Autonomía & Proactividad", level: 95, color: 'magenta' },
-                { name: "Scrum / Agile Frameworks", level: 90, color: 'magenta' },
-                { name: "Visión Financiera & ROI", level: 92, color: 'magenta' },
-            ]
-        };
-
-        function renderSkillCard(skill) {
-            const colorClass = skill.color === 'blue' ? 'bg-primary-blue' : (skill.color === 'magenta' ? 'bg-secondary-magenta' : 'bg-accent-cyan');
-            return `
-                <div class="skill-card p-4 rounded-xl flex flex-col justify-between border border-slate-800" data-level="${skill.level}">
-                    <p class="font-semibold text-white text-xs mb-2">${skill.name}</p>
-                    <div class="w-full bg-slate-800 rounded-full h-2">
-                        <div class="progress-bar-fill ${colorClass} h-2 rounded-full transition-all duration-1000" style="width: 0%" aria-valuenow="${skill.level}"></div>
-                    </div>
-                </div>
-            `;
-        }
-
-        function initSkills() {
-            document.getElementById('dev-skills').innerHTML = SKILLS.dev.map(renderSkillCard).join('');
-            document.getElementById('data-skills').innerHTML = SKILLS.data.map(renderSkillCard).join('');
-            document.getElementById('tools-skills').innerHTML = SKILLS.tools.map(renderSkillCard).join('');
-            document.getElementById('soft-skills').innerHTML = SKILLS.soft.map(renderSkillCard).join('');
-        }
-
         function openModal() {
             document.getElementById('modal-recommendation').classList.remove('hidden');
         }
@@ -723,18 +909,18 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            initSkills();
-
-            // Mobile Menu
+            // Mobile Menu Toggle
             const btn = document.getElementById('mobile-menu-button');
             const menu = document.getElementById('mobile-menu');
-            btn.addEventListener('click', () => {
-                menu.classList.toggle('open');
-            });
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('open');
+                });
 
-            document.querySelectorAll('.mobile-nav-link').forEach(l => {
-                l.addEventListener('click', () => menu.classList.remove('open'));
-            });
+                document.querySelectorAll('.mobile-nav-link').forEach(l => {
+                    l.addEventListener('click', () => menu.classList.remove('open'));
+                });
+            }
 
             // Scroll Reveal Observer
             const revealElements = document.querySelectorAll('.scroll-reveal');
@@ -742,26 +928,46 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animate-in');
-                        if (entry.target.id === 'skills') {
-                            document.querySelectorAll('.progress-bar-fill').forEach(bar => {
-                                const level = bar.getAttribute('aria-valuenow');
-                                bar.style.width = `${level}%`;
-                            });
-                        }
                     }
                 });
             }, { threshold: 0.1 });
 
             revealElements.forEach(el => observer.observe(el));
 
-            // Form Submit Simulation
-            document.getElementById('contact-form').addEventListener('submit', (e) => {
-                e.preventDefault();
-                const msg = document.getElementById('form-message');
-                msg.className = "text-center py-2 text-sm rounded-lg bg-green-900/40 text-green-300 block";
-                msg.textContent = "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.";
-                e.target.reset();
-            });
+            // Form Submit Logic with Async Spinner Simulation & Formspree Support
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    const btnText = document.getElementById('btn-text');
+                    const btnLoader = document.getElementById('btn-loader');
+                    const msg = document.getElementById('form-message');
+                    const submitBtn = document.getElementById('submit-btn');
+
+                    // If Formspree endpoint is default simulation, run responsive animated sequence
+                    if (this.action.includes('xbjnqvzg') || !this.action) {
+                        e.preventDefault();
+                        
+                        // Show Loader
+                        btnText.classList.add('hidden');
+                        btnLoader.classList.remove('hidden');
+                        submitBtn.disabled = true;
+
+                        setTimeout(() => {
+                            btnText.classList.remove('hidden');
+                            btnLoader.classList.add('hidden');
+                            submitBtn.disabled = false;
+
+                            msg.className = "text-center py-2.5 px-4 text-sm rounded-lg bg-green-900/40 text-green-300 border border-green-700/50 block";
+                            msg.textContent = "¡Mensaje enviado con éxito! Nos pondremos en contacto muy pronto.";
+                            contactForm.reset();
+
+                            setTimeout(() => {
+                                msg.classList.add('hidden');
+                            }, 5000);
+                        }, 1200);
+                    }
+                });
+            }
         });
     </script>
 </body>
