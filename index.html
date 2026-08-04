@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio de Luisa Fernanda Rincón | Admin, Tech, Data</title>
+    <title>Portafolio | Luisa Fernanda Rincón Durán - Data Analytics & Software Consultant</title>
 
-    <!-- Tailwind CDN -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Configuración de Tailwind CSS con fuente Inter y paleta de colores
         tailwind.config = {
             theme: {
                 extend: {
@@ -16,43 +15,37 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        // Colores Base
                         'darkest': '#040714',
-                        'card-bg': '#0F172A', // Slate-900 oscuro
-                        'text-light': '#E5E7EB', // Gris claro
-                        'text-muted': '#A1A1AA', // Gris sutil
-
-                        // Colores de Acento
-                        'primary-blue': '#3B82F6', // Azul principal (Accent-blue)
-                        'secondary-magenta': '#EC4899', // Magenta vibrante para contraste
-                        'light-glow': '#93C5FD', // Azul claro para brillos
+                        'card-bg': '#0F172A',
+                        'text-light': '#E5E7EB',
+                        'text-muted': '#9CA3AF',
+                        'primary-blue': '#3B82F6',
+                        'secondary-magenta': '#EC4899',
+                        'light-glow': '#93C5FD',
+                        'accent-cyan': '#06B6D4',
                     }
                 }
             }
         }
     </script>
 
-    <!-- Enlace a Font Awesome para iconos de habilidad -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* === FONDO GLOBAL CON CUADRÍCULA Y GRADIENTE === */
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            background-color: #040714; /* Color base muy oscuro */
+            background-color: #040714;
             color: #E5E7EB;
             overflow-x: hidden;
             background-image:
-                /* Patrón de cuadrícula tenue */
-                linear-gradient(to right, #0F172A 1px, transparent 1px),
-                linear-gradient(to bottom, #0F172A 1px, transparent 1px);
-            background-size: 50px 50px;
+                linear-gradient(to right, rgba(15, 23, 42, 0.6) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(15, 23, 42, 0.6) 1px, transparent 1px);
+            background-size: 40px 40px;
             background-attachment: fixed;
-            position: relative;
         }
 
-        /* Capa de brillo sutil para un efecto "plasma" */
         body::before {
             content: '';
             position: fixed;
@@ -61,126 +54,143 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            background: radial-gradient(circle at 10% 90%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 10%, rgba(236, 72, 153, 0.1) 0%, transparent 40%);
+            background: radial-gradient(circle at 15% 85%, rgba(59, 130, 246, 0.12) 0%, transparent 45%),
+                        radial-gradient(circle at 85% 15%, rgba(236, 72, 153, 0.12) 0%, transparent 45%);
             z-index: -1;
         }
 
-        /* PANEL CARTA - Estilo Neumorfismo Oscuro/Glassmorphism */
         .glass-panel {
-            background: rgba(15, 23, 42, 0.95); /* card-bg semi-transparente */
-            border-radius: 1.5rem; /* Más redondeado */
-            border: 1px solid rgba(71, 85, 105, 0.4); /* Borde sutil */
-            box-shadow:
-                0 25px 50px rgba(0, 0, 0, 0.8), /* Sombra principal fuerte */
-                0 0 40px rgba(59, 130, 246, 0.15); /* Brillo azul tenue */
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(59, 130, 246, 0.08);
         }
-        
-        /* Ajuste de Padding Responsivo */
+
         .section-padding {
-            padding: 5rem 1.5rem;
+            padding: 4.5rem 1.25rem;
         }
         @media (min-width: 640px) {
             .section-padding {
-                padding: 6rem 4rem;
+                padding: 6rem 3rem;
             }
         }
 
-        /* Avatar pulse (mantenido) */
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        @keyframes pulse-glow {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.6); }
+            70% { transform: scale(1.03); box-shadow: 0 0 0 15px rgba(236, 72, 153, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
         }
         .avatar-pulse {
-            animation: pulse 2s infinite;
+            animation: pulse-glow 2.5s infinite;
         }
 
-        /* Scroll reveal (mantenido) */
         .scroll-reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Curva más suave */
+            transform: translateY(25px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .scroll-reveal.animate-in {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Tarjetas de Habilidad */
         .skill-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: #0F172A;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            background: rgba(15, 23, 42, 0.9);
         }
         .skill-card:hover {
-            transform: translateY(-5px);
-            /* Brillo con el acento magenta */
-            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(236, 72, 153, 0.25);
             border-color: #EC4899;
+        }
+
+        .mobile-menu {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .mobile-menu.open {
+            max-height: 400px;
+            opacity: 1;
         }
     </style>
 </head>
 
-<body class="antialiased">
+<body class="antialiased text-text-light selection:bg-secondary-magenta selection:text-white">
+
     <!-- NAV -->
-    <nav class="sticky top-0 z-50 bg-darkest/90 backdrop-blur-md border-b border-slate-800 shadow-xl">
+    <nav class="sticky top-0 z-50 bg-darkest/90 backdrop-blur-md border-b border-slate-800/80 shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="#hero" class="text-3xl font-extrabold text-secondary-magenta hover:text-primary-blue transition focus:outline-none focus:ring-2 focus:ring-secondary-magenta rounded-md p-1 -m-1 tracking-wider">
-                    LFR | Admin & Dev
+                <a href="#hero" class="text-xl sm:text-2xl font-black text-white hover:text-secondary-magenta transition tracking-wider flex items-center gap-2">
+                    <span class="bg-gradient-to-r from-primary-blue to-secondary-magenta bg-clip-text text-transparent">LUISA RINCÓN</span>
+                    <span class="text-xs bg-slate-800 text-light-glow px-2 py-0.5 rounded-full border border-slate-700 font-normal">Data & Dev</span>
                 </a>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#about" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2 focus:outline-none focus:ring-2 focus:ring-primary-blue rounded-md">Sobre Mí</a>
-                    <a href="#skills" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2 focus:outline-none focus:ring-2 focus:ring-primary-blue rounded-md">Habilidades</a>
-                    <a href="#projects" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2 focus:outline-none focus:ring-2 focus:ring-primary-blue rounded-md">Proyectos</a>
-                    <a href="#contact" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2 focus:outline-none focus:ring-2 focus:ring-primary-blue rounded-md">Contacto</a>
+                <div class="hidden md:flex space-x-5 text-sm">
+                    <a href="#about" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2">Sobre Mí</a>
+                    <a href="#experience" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2">Experiencia</a>
+                    <a href="#recommendation" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2">Recomendación</a>
+                    <a href="#skills" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2">Habilidades</a>
+                    <a href="#projects" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2">Proyectos</a>
+                    <a href="#education" class="nav-link text-text-muted hover:text-primary-blue transition font-medium p-2">Educación</a>
+                    <a href="#contact" class="nav-link text-secondary-magenta hover:text-pink-400 transition font-bold p-2">Contacto</a>
                 </div>
-                <button id="mobile-menu-button" aria-label="Abrir menú móvil" class="md:hidden text-text-light hover:text-secondary-magenta focus:outline-none focus:ring-2 focus:ring-secondary-magenta rounded-md p-1 -m-1">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
+                <button id="mobile-menu-button" aria-label="Abrir menú móvil" class="md:hidden text-text-light hover:text-secondary-magenta p-2">
+                    <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Menú móvil -->
-        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-20 w-full bg-darkest/95 border-b border-slate-800 z-40">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
-                <a href="#about" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800/50 rounded-md w-full text-center">Sobre Mí</a>
-                <a href="#skills" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800/50 rounded-md w-full text-center">Habilidades</a>
-                <a href="#projects" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800/50 rounded-md w-full text-center">Proyectos</a>
-                <a href="#contact" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800/50 rounded-md w-full text-center">Contacto</a>
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-darkest/98 border-b border-slate-800">
+            <div class="px-4 pt-3 pb-5 space-y-2 flex flex-col items-center">
+                <a href="#about" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center">Sobre Mí</a>
+                <a href="#experience" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center">Experiencia</a>
+                <a href="#recommendation" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center">Recomendación</a>
+                <a href="#skills" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center">Habilidades</a>
+                <a href="#projects" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center">Proyectos</a>
+                <a href="#education" class="mobile-nav-link block px-3 py-2 text-base font-medium text-text-light hover:bg-slate-800 rounded-lg w-full text-center">Educación</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 text-base font-medium text-secondary-magenta hover:bg-slate-800 rounded-lg w-full text-center font-bold">Contacto</a>
             </div>
         </div>
     </nav>
 
     <main id="main-content">
         <!-- HERO -->
-        <header id="hero" class="section-padding min-h-[90vh] flex items-center justify-center pt-24 pb-16">
-            <div class="max-w-6xl mx-auto glass-panel p-8 md:p-16 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+        <header id="hero" class="section-padding min-h-[85vh] flex items-center justify-center pt-20 pb-12">
+            <div class="max-w-6xl mx-auto glass-panel p-8 md:p-14 flex flex-col md:flex-row items-center gap-10 md:gap-14">
                 <div class="flex-shrink-0 order-1 md:order-2">
-                    <!-- Placeholder de la foto de perfil -->
                     <img src="Foto.jpeg"
                         alt="Foto de perfil de Luisa Fernanda Rincón"
-                        class="rounded-full w-52 h-52 object-cover border-4 border-secondary-magenta avatar-pulse shadow-2xl"
-                        onerror="this.onerror=null; this.src='https://placehold.co/208x208/EC4899/040714?text=Tu+Foto'"> <!-- CAMBIAR "Foto.jpeg" por tu URL pública -->
+                        class="rounded-full w-48 h-48 md:w-56 md:h-56 object-cover border-4 border-secondary-magenta avatar-pulse shadow-2xl"
+                        onerror="this.onerror=null; this.src='https://placehold.co/224x224/EC4899/040714?text=Luisa+Rincon'">
                 </div>
-                <div class="hero-text-animate md:text-left text-center order-2 md:order-1">
-                    <p class="text-xl text-light-glow mb-4 font-semibold tracking-wide">
-                        Administración, Tecnología y Datos
-                    </p>
-                    <h1 class="text-5xl sm:text-7xl font-extrabold leading-snug tracking-tighter mb-6">
-                        <span class="text-white block">Luisa Fernanda Rincón</span>
-                        <span class="text-primary-blue block">Multidisciplinar Leader</span>
+                <div class="md:text-left text-center order-2 md:order-1 flex-1">
+                    <div class="inline-flex items-center gap-2 bg-primary-blue/20 text-light-glow text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full border border-primary-blue/30 mb-4">
+                        <i class="fas fa-check-circle text-secondary-magenta"></i> Disponible para Consultoría & Desarrollo
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-black leading-tight tracking-tight mb-4">
+                        <span class="text-white block">Luisa Fernanda</span>
+                        <span class="bg-gradient-to-r from-primary-blue via-pink-400 to-secondary-magenta bg-clip-text text-transparent block">Rincón Durán</span>
                     </h1>
-                    <p class="text-lg sm:text-2xl text-text-light mb-8 font-light">
-                        Administradora de Empresas | Desarrolladora de Aplicaciones | Máster en Análisis de Datos
+                    <p class="text-xl sm:text-2xl text-light-glow font-bold mb-3">
+                        Data Analytics &amp; Software Consultant
                     </p>
-                    <a href="#projects"
-                        class="inline-block px-10 py-4 bg-secondary-magenta text-white font-bold rounded-xl shadow-lg shadow-pink-900/40 hover:bg-pink-600 transition transform hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-pink-300/50">
-                        Explorar Proyectos <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
+                    <p class="text-sm sm:text-base text-text-muted mb-8 leading-relaxed max-w-2xl">
+                        Administradora de Empresas + Desarrolladora de Software + Máster en Análisis de Datos. Más de 5 años transformando datos en estrategia e implementando soluciones backend/frontend con Java, Spring Boot, Angular y Power BI.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <a href="#projects"
+                            class="px-7 py-3.5 bg-secondary-magenta hover:bg-pink-600 text-white font-bold rounded-xl shadow-lg shadow-pink-900/40 transition transform hover:scale-[1.02] flex items-center gap-2">
+                            Ver Proyectos <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#recommendation"
+                            class="px-7 py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl border border-slate-700 transition flex items-center gap-2">
+                            <i class="fas fa-award text-secondary-magenta"></i> Ver Recomendación
+                        </a>
+                    </div>
                 </div>
             </div>
         </header>
@@ -188,37 +198,147 @@
         <!-- SOBRE MÍ -->
         <section id="about" class="section-padding">
             <div class="max-w-6xl mx-auto glass-panel p-8 md:p-12">
-                <h2 class="text-4xl font-extrabold text-center mb-12 text-secondary-magenta scroll-reveal border-b-2 border-primary-blue/30 pb-4">
-                    Sobre Mí: El Eje de Tres Pilares
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-4 text-white scroll-reveal">
+                    Sobre Mí: <span class="text-secondary-magenta">Sinergia Negocio + Tech + Data</span>
                 </h2>
+                <p class="text-center text-text-muted max-w-3xl mx-auto mb-12 scroll-reveal text-sm sm:text-base">
+                    Mi propuesta de valor radíca en conectar la visión financiera y estratégica empresarial con la solidez técnica del desarrollo de software y la precisión de la analítica de datos.
+                </p>
                 
-                <div class="grid md:grid-cols-3 gap-8 text-center">
-                    <div class="p-6 rounded-xl border border-slate-700/50 hover:border-primary-blue skill-card scroll-reveal">
-                        <!-- Icono: Business/Estrategia -->
-                        <i class="fas fa-chart-line w-16 h-16 text-primary-blue mx-auto mb-4 text-5xl transition icon-bounce"></i>
-                        <h3 class="text-2xl font-bold text-white mb-3">Visión Empresarial</h3>
-                        <p class="text-text-muted leading-relaxed">Mi base en Administración me permite entender los objetivos de negocio, la eficiencia operativa y la toma de decisiones estratégicas, asegurando que los proyectos técnicos generen valor real y medible.</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 rounded-2xl border border-slate-800 bg-darkest/60 skill-card scroll-reveal">
+                        <i class="fas fa-briefcase text-primary-blue mb-4 text-4xl"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Visión de Negocio</h3>
+                        <p class="text-text-muted text-sm leading-relaxed">
+                            Formación en Administración de Empresas enfocada en ROI, eficiencia de procesos, traducción de requerimientos comerciales y alineación estratégica con stakeholders.
+                        </p>
                     </div>
 
-                    <div class="p-6 rounded-xl border border-slate-700/50 hover:border-secondary-magenta skill-card scroll-reveal" style="transition-delay: 0.1s;">
-                        <!-- Icono: Desarrollo/Código -->
-                        <i class="fas fa-code w-16 h-16 text-secondary-magenta mx-auto mb-4 text-5xl transition icon-bounce"></i>
-                        <h3 class="text-2xl font-bold text-white mb-3">Habilidades Técnicas</h3>
-                        <p class="text-text-muted leading-relaxed">Como desarrolladora, aporto la capacidad de construir soluciones funcionales y robustas, automatizar procesos complejos y colaborar eficazmente en el ciclo de vida del desarrollo de software (SDLC).</p>
+                    <div class="p-6 rounded-2xl border border-slate-800 bg-darkest/60 skill-card scroll-reveal" style="transition-delay: 0.1s;">
+                        <i class="fas fa-code text-secondary-magenta mb-4 text-4xl"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Desarrollo Backend &amp; Frontend</h3>
+                        <p class="text-text-muted text-sm leading-relaxed">
+                            Construcción de microservicios con Java 21 y Spring Boot, consumo de APIs REST, interfaces reactivas con Angular/TypeScript y testing avanzado (JUnit 5, Testcontainers).
+                        </p>
                     </div>
 
-                    <div class="p-6 rounded-xl border border-slate-700/50 hover:border-primary-blue skill-card scroll-reveal" style="transition-delay: 0.2s;">
-                        <!-- Icono: Datos/Análisis -->
-                        <i class="fas fa-database w-16 h-16 text-primary-blue mx-auto mb-4 text-5xl transition icon-bounce"></i>
-                        <h3 class="text-2xl font-bold text-white mb-3">Análisis Estratégico</h3>
-                        <p class="text-text-muted leading-relaxed">Mi Máster en Análisis de Datos me permite transformar grandes volúmenes de información en decisiones cuantificables, creando modelos predictivos y visualizaciones que impulsan la estrategia.</p>
+                    <div class="p-6 rounded-2xl border border-slate-800 bg-darkest/60 skill-card scroll-reveal" style="transition-delay: 0.2s;">
+                        <i class="fas fa-chart-pie text-accent-cyan mb-4 text-4xl"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Data Analytics &amp; BI</h3>
+                        <p class="text-text-muted text-sm leading-relaxed">
+                            Modelado predictivo (Python, SQL), procesos ETL, dashboards ejecutivos en Power BI y análisis de comportamiento para decisiones basadas en datos reales.
+                        </p>
                     </div>
                 </div>
 
-                <div class="mt-16 text-center scroll-reveal" style="transition-delay: 0.3s;">
-                    <p class="text-xl text-text-light italic border-l-4 border-secondary-magenta/50 pl-4 py-2 mx-auto max-w-2xl">
-                        "Mi objetivo es cerrar la brecha entre la estrategia empresarial y la ejecución tecnológica, impulsando el crecimiento con decisiones basadas en datos."
+                <div class="mt-12 p-6 rounded-xl bg-slate-900/90 border-l-4 border-secondary-magenta text-center scroll-reveal">
+                    <p class="text-base sm:text-lg text-text-light italic">
+                        "Especializada en integrar herramientas de Inteligencia Artificial Generativa en IDEs y flujos de trabajo para acelerar la entrega de valor con alta calidad."
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCIA LABORAL -->
+        <section id="experience" class="section-padding">
+            <div class="max-w-6xl mx-auto glass-panel p-8 md:p-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-primary-blue scroll-reveal">
+                    Experiencia Profesional (5+ Años)
+                </h2>
+
+                <div class="relative border-l-2 border-slate-800 ml-4 md:ml-8 space-y-12">
+                    <!-- SNGULAR -->
+                    <div class="relative pl-6 md:pl-10 scroll-reveal">
+                        <span class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-secondary-magenta border-4 border-darkest"></span>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-2">
+                            <h3 class="text-xl font-bold text-white">Software Developer Intern – Consultoría Tecnológica</h3>
+                            <span class="text-xs font-semibold px-3 py-1 bg-secondary-magenta/20 text-secondary-magenta rounded-full w-fit">SNGULAR | Mar 2026 – May 2026</span>
+                        </div>
+                        <p class="text-xs text-text-muted mb-3"><i class="fas fa-map-marker-alt"></i> Madrid, España (Remoto)</p>
+                        <ul class="list-disc list-inside text-sm text-text-muted space-y-2 leading-relaxed">
+                            <li><strong class="text-text-light">Backend en Microservicios:</strong> APIs REST robustas con Java 21, Spring Boot, MapStruct y persistencia en PostgreSQL / Oracle.</li>
+                            <li><strong class="text-text-light">Frontend Reactivo:</strong> Componentes dinámicos e integrados en Angular con TypeScript.</li>
+                            <li><strong class="text-text-light">Testing &amp; Calidad:</strong> Suites unitarias (JUnit 5, Mockito), PoC con Testcontainers e implementación de Mutation Testing.</li>
+                            <li><strong class="text-text-light">Spikes &amp; IA:</strong> Integración local de Google Cloud Pub/Sub y evaluación de IA en IDEs para aceleración del desarrollo.</li>
+                        </ul>
+                    </div>
+
+                    <!-- NUTRABIOTICS -->
+                    <div class="relative pl-6 md:pl-10 scroll-reveal">
+                        <span class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-primary-blue border-4 border-darkest"></span>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-2">
+                            <h3 class="text-xl font-bold text-white">Analista de Datos / BI Analyst</h3>
+                            <span class="text-xs font-semibold px-3 py-1 bg-primary-blue/20 text-light-glow rounded-full w-fit">Nutrabiotics | Ene 2022 – Ene 2024</span>
+                        </div>
+                        <p class="text-xs text-text-muted mb-3"><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+                        <ul class="list-disc list-inside text-sm text-text-muted space-y-2 leading-relaxed">
+                            <li><strong class="text-text-light">Automatización BI:</strong> Migración de reportes manuales a Power BI, reduciendo en un <span class="text-secondary-magenta font-bold">40%</span> el tiempo de generación de informes.</li>
+                            <li><strong class="text-text-light">Forecasting de Ventas:</strong> Modelos predictivos y monitoreo en tiempo real por región y canal.</li>
+                        </ul>
+                    </div>
+
+                    <!-- CELAGEM -->
+                    <div class="relative pl-6 md:pl-10 scroll-reveal">
+                        <span class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-accent-cyan border-4 border-darkest"></span>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-2">
+                            <h3 class="text-xl font-bold text-white">Analista de Datos &amp; Marketing</h3>
+                            <span class="text-xs font-semibold px-3 py-1 bg-cyan-900/40 text-accent-cyan rounded-full w-fit">Celagem | Ene 2021 – Ene 2022</span>
+                        </div>
+                        <p class="text-xs text-text-muted mb-3"><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+                        <ul class="list-disc list-inside text-sm text-text-muted space-y-2 leading-relaxed">
+                            <li><strong class="text-text-light">Optimización ROI:</strong> Modelos de atribución digital logrando un aumento del <span class="text-secondary-magenta font-bold">25%</span> en tasa de conversión anual.</li>
+                            <li><strong class="text-text-light">Analítica Web:</strong> Auditorías con Google Analytics presentadas directamente a la Junta Directiva.</li>
+                        </ul>
+                    </div>
+
+                    <!-- PROMOTICK -->
+                    <div class="relative pl-6 md:pl-10 scroll-reveal">
+                        <span class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-slate-600 border-4 border-darkest"></span>
+                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-1 mb-2">
+                            <h3 class="text-xl font-bold text-white">Analista de Datos &amp; Procesos</h3>
+                            <span class="text-xs font-semibold px-3 py-1 bg-slate-800 text-text-muted rounded-full w-fit">Promotick | Abr 2018 – Ene 2021</span>
+                        </div>
+                        <p class="text-xs text-text-muted mb-3"><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</p>
+                        <ul class="list-disc list-inside text-sm text-text-muted space-y-2 leading-relaxed">
+                            <li><strong class="text-text-light">Integridad de Datos:</strong> Reportes de KPIs en Excel/SQL incrementando la calidad de datos a más del 85%.</li>
+                            <li><strong class="text-text-light">Ahorro Operativo:</strong> Detección de ineficiencias transaccionales generando un ahorro anual del 10%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECOMENDACIÓN DESTACADA -->
+        <section id="recommendation" class="section-padding">
+            <div class="max-w-6xl mx-auto glass-panel p-8 md:p-12 bg-gradient-to-br from-card-bg via-slate-900 to-darkest border-2 border-secondary-magenta/40">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="text-center md:text-left flex-1">
+                        <div class="inline-block px-3 py-1 bg-secondary-magenta/20 text-secondary-magenta text-xs font-bold rounded-full mb-3 uppercase tracking-wider">
+                            <i class="fas fa-certificate"></i> Carta de Recomendación Oficial
+                        </div>
+                        <h2 class="text-3xl font-extrabold text-white mb-4">SNGULAR Technologies</h2>
+                        <blockquote class="text-sm sm:text-base text-text-light italic leading-relaxed mb-6 bg-darkest/50 p-4 rounded-xl border-l-4 border-primary-blue">
+                            "Luisa ha demostrado ser una profesional íntegra, con una mente analítica brillante, un fuerte espíritu de superación y una madurez técnica encomiable. Su proactividad y frescura para proponer alternativas técnicas han aportado un valor real tangible a nuestros proyectos."
+                        </blockquote>
+                        <div class="flex items-center gap-4 justify-center md:justify-start mb-6">
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Carlos Cenjor Ramírez</h4>
+                                <p class="text-xs text-text-muted">Responsable de Proyecto y Mentor en Sngular</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                            <button onclick="openModal()" class="px-5 py-2.5 bg-secondary-magenta hover:bg-pink-600 text-white font-bold rounded-lg text-sm transition flex items-center gap-2">
+                                <i class="fas fa-file-pdf"></i> Leer Carta Completa
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 bg-darkest/70 p-6 rounded-2xl border border-slate-800 text-xs space-y-3">
+                        <h4 class="font-bold text-primary-blue text-sm mb-2 border-b border-slate-800 pb-2">Aptitudes Destacadas en Recomendación:</h4>
+                        <div class="flex items-center gap-2"><i class="fas fa-bolt text-yellow-400"></i> Steep Learning Curve (Evolución exponencial)</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-robot text-cyan-400"></i> Sinergia con IA Generativa</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-shield-alt text-green-400"></i> Autonomía &amp; Resolución de Bloqueos</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-users text-pink-400"></i> Excelente Comunicación &amp; Sinergia</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -226,51 +346,39 @@
         <!-- HABILIDADES -->
         <section id="skills" class="section-padding">
             <div class="max-w-6xl mx-auto glass-panel p-8 md:p-12">
-                <h2 class="text-4xl font-extrabold text-center mb-16 text-primary-blue scroll-reveal">Conjunto de Habilidades Técnicas y de Liderazgo</h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-primary-blue scroll-reveal">Stack Tecnológico &amp; Competencias</h2>
 
-                <div class="space-y-16">
-                    <!-- Habilidades Blandas (Soft Skills) -->
+                <div class="space-y-12">
+                    <!-- Software Development -->
                     <div class="scroll-reveal">
-                        <h3 class="text-2xl font-bold text-secondary-magenta mb-6 flex items-center">
-                            <i class="fas fa-user-friends w-6 h-6 mr-3"></i>
-                            Liderazgo y Habilidades Blandas
+                        <h3 class="text-xl font-bold text-secondary-magenta mb-4 flex items-center gap-2">
+                            <i class="fas fa-laptop-code"></i> Software Development &amp; Architecture
                         </h3>
-                        <div id="soft-skills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <!-- Soft Skills se llenarán con JS -->
-                        </div>
+                        <div id="dev-skills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
                     </div>
 
-                    <!-- Desarrollo de Aplicaciones -->
-                    <div class="scroll-reveal" style="transition-delay: 0.2s;">
-                        <h3 class="text-2xl font-bold text-primary-blue mb-6 flex items-center">
-                            <i class="fas fa-laptop-code w-6 h-6 mr-3"></i>
-                            Desarrollo de Aplicaciones
+                    <!-- Data Analytics & BI -->
+                    <div class="scroll-reveal">
+                        <h3 class="text-xl font-bold text-primary-blue mb-4 flex items-center gap-2">
+                            <i class="fas fa-chart-line"></i> Data Analytics, BI &amp; Databases
                         </h3>
-                        <div id="dev-skills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <!-- Dev Skills se llenarán con JS -->
-                        </div>
-                    </div>
-                    
-                    <!-- Análisis de Datos & BI -->
-                    <div class="scroll-reveal" style="transition-delay: 0.4s;">
-                        <h3 class="text-2xl font-bold text-secondary-magenta mb-6 flex items-center">
-                            <i class="fas fa-chart-area w-6 h-6 mr-3"></i>
-                            Análisis de Datos &amp; Business Intelligence
-                        </h3>
-                        <div id="data-skills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <!-- Data Skills se llenarán con JS -->
-                        </div>
+                        <div id="data-skills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
                     </div>
 
-                    <!-- Gestión & Estrategia Empresarial -->
-                    <div class="scroll-reveal" style="transition-delay: 0.6s;">
-                        <h3 class="text-2xl font-bold text-primary-blue mb-6 flex items-center">
-                            <i class="fas fa-sitemap w-6 h-6 mr-3"></i>
-                            Gestión &amp; Estrategia Empresarial
+                    <!-- Software Quality & Tools -->
+                    <div class="scroll-reveal">
+                        <h3 class="text-xl font-bold text-accent-cyan mb-4 flex items-center gap-2">
+                            <i class="fas fa-vial"></i> Testing, Cloud &amp; Tools
                         </h3>
-                        <div id="mgmt-skills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <!-- Mgmt Skills se llenarán con JS -->
-                        </div>
+                        <div id="tools-skills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+                    </div>
+
+                    <!-- Leadership & Mgmt -->
+                    <div class="scroll-reveal">
+                        <h3 class="text-xl font-bold text-pink-400 mb-4 flex items-center gap-2">
+                            <i class="fas fa-user-check"></i> Liderazgo &amp; Habilidades Estratégicas
+                        </h3>
+                        <div id="soft-skills" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
                     </div>
                 </div>
             </div>
@@ -279,81 +387,91 @@
         <!-- PROYECTOS -->
         <section id="projects" class="section-padding">
             <div class="max-w-6xl mx-auto glass-panel p-8 md:p-12">
-                <h2 class="text-4xl font-extrabold text-center mb-12 text-primary-blue scroll-reveal border-b-2 border-secondary-magenta/30 pb-4">Proyectos Destacados</h2>
-                <p class="text-center text-text-muted text-lg mb-10 scroll-reveal">
-                    Ejemplos tangibles de cómo fusiono mis tres áreas de conocimiento.
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-4 text-white scroll-reveal">Proyectos Destacados</h2>
+                <p class="text-center text-text-muted text-sm sm:text-base mb-10 scroll-reveal">
+                    Casos de estudio y repositorios que reflejan el desarrollo técnico y analítico.
                 </p>
 
-                <div class="text-center mb-14 scroll-reveal">
-                    <a href="https://drive.google.com/file/d/1SZ6DURVP-c1-EPh2Gu4VEDW4h92XOxxz/view?usp=sharing"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-block px-12 py-4 bg-secondary-magenta text-white text-lg font-bold rounded-full shadow-xl shadow-pink-900/50 hover:bg-pink-600 transition transform hover:scale-105 border-2 border-transparent focus:outline-none focus:ring-4 focus:ring-pink-300/50">
-                        Descargar CV Completo <i class="fas fa-download ml-3"></i>
-                    </a>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-10">
-                    <!-- PROYECTO 1: Landing Page Cartagena -->
-                    <div class="project-card p-6 rounded-xl bg-card-bg/70 border border-slate-700/50 hover:border-primary-blue scroll-reveal">
-                        <h3 class="text-2xl font-bold text-white mb-3">Landing Page - Descubre Cartagena (HTML/CSS)</h3>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="inline-block bg-primary-blue/30 text-light-glow text-xs font-medium px-3 py-1 rounded-full">Desarrollo Web</span>
-                            <span class="inline-block bg-primary-blue/30 text-light-glow text-xs font-medium px-3 py-1 rounded-full">Diseño Responsivo</span>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- PROYECTO 1 -->
+                    <div class="project-card p-6 rounded-2xl bg-card-bg/80 border border-slate-800 hover:border-primary-blue scroll-reveal">
+                        <h3 class="text-xl font-bold text-white mb-2">Landing Page - Descubre Cartagena</h3>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="bg-primary-blue/20 text-light-glow text-xs font-medium px-2.5 py-0.5 rounded-full">HTML5 / CSS3</span>
+                            <span class="bg-primary-blue/20 text-light-glow text-xs font-medium px-2.5 py-0.5 rounded-full">Responsive Design</span>
                         </div>
-                        <p class="text-text-muted mb-4 leading-relaxed">
-                            Página de aterrizaje informativa y visualmente atractiva sobre Cartagena. Demuestra el uso de HTML semántico, estructuración de contenido y diseño responsivo para ofrecer una experiencia completa al usuario.
+                        <p class="text-text-muted text-sm mb-4 leading-relaxed">
+                            Página de aterrizaje optimizada con estructura semántica, diseño adaptable para dispositivos móviles y navegación intuitiva para usuarios turísticos.
                         </p>
-                       <div class="relative mb-6 overflow-hidden rounded-xl border border-slate-700 shadow-lg">
-                            <!-- Línea 1: Reemplaza 'https://placehold.co/...' con la URL de tu imagen de la Landing Page -->
-                            <img src=cartagena.png
-                                alt="Captura de pantalla de la Landing Page Descubre Cartagena"
-                                class="w-full h-auto object-cover transition duration-300 hover:scale-[1.05]"
-                                onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E3A8A/ffffff?text=REEMPLAZAR+URL+PROYECTO+1'">
+                        <div class="overflow-hidden rounded-xl border border-slate-800 mb-4">
+                            <img src="cartagena.png" alt="Cartagena Project" class="w-full h-48 object-cover hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E3A8A/ffffff?text=Descubre+Cartagena'">
                         </div>
-                        <div class="flex flex-wrap gap-4 mt-4">
-                             <a href="https://github.com/LuisaR95/Lenguaje-marca" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                class="text-secondary-magenta hover:underline font-bold flex items-center transition focus:outline-none focus:ring-2 focus:ring-secondary-magenta rounded-md p-1 -m-1">
-                                <i class="fas fa-external-link-alt w-3 h-3 mr-2"></i> Ver Proyecto en Vivo
-                            </a>
-                            <a href="https://github.com/LuisaR95/Lenguaje-marca" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                class="text-text-muted hover:text-white font-medium flex items-center transition focus:outline-none focus:ring-2 focus:ring-slate-500 rounded-md p-1 -m-1">
-                                <i class="fab fa-github w-4 h-4 mr-1"></i> Código Fuente
-                            </a>
+                        <div class="flex gap-4 text-sm font-semibold">
+                            <a href="https://github.com/LuisaR95/Lenguaje-marca" target="_blank" class="text-secondary-magenta hover:underline"><i class="fab fa-github"></i> Ver Código</a>
                         </div>
                     </div>
 
-                    <!-- Proyecto 2: Prototipo UI/UX para e-commerce (FarmaLocal) -->
-                    <div class="project-card p-6 rounded-xl bg-card-bg/70 border border-slate-700/50 hover:border-secondary-magenta scroll-reveal" style="transition-delay: 0.1s;">
-                        <h3 class="text-2xl font-bold text-white mb-3">Prototipo UI/UX para e-commerce (FarmaLocal)</h3>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="inline-block bg-secondary-magenta/30 text-pink-300 text-xs font-medium px-3 py-1 rounded-full">UI/UX Design</span>
-                            <span class="inline-block bg-secondary-magenta/30 text-pink-300 text-xs font-medium px-3 py-1 rounded-full">Diseño Centrado en el Usuario</span>
+                    <!-- PROYECTO 2 -->
+                    <div class="project-card p-6 rounded-2xl bg-card-bg/80 border border-slate-800 hover:border-secondary-magenta scroll-reveal">
+                        <h3 class="text-xl font-bold text-white mb-2">Prototipo UI/UX FarmaLocal</h3>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Figma</span>
+                            <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-medium px-2.5 py-0.5 rounded-full">UI/UX Prototype</span>
                         </div>
-                        <p class="text-text-muted mb-4 leading-relaxed">
-                            Diseño completo de la interfaz de usuario para una aplicación de farmacia local, centrado en la usabilidad móvil y flujos de conversión. Incluye flujos de bienvenida, autenticación, navegación y proceso de pago optimizado.
+                        <p class="text-text-muted text-sm mb-4 leading-relaxed">
+                            Diseño interactivo para e-commerce farmacéutico local, estructurado para maximizar tasas de conversión y facilitar checkout móvil.
                         </p>
+                        <div class="overflow-hidden rounded-xl border border-slate-800 mb-4">
+                            <img src="figma.png" alt="FarmaLocal Figma Prototype" class="w-full h-48 object-cover hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/9D174D/ffffff?text=FarmaLocal+UI+UX'">
+                        </div>
+                        <div class="flex gap-4 text-sm font-semibold">
+                            <a href="https://www.figma.com/design/g5nzcp5epg5o6ikS81V3nN/Programaci%C3%B3n-multimedia?node-id=29-3&p=f" target="_blank" class="text-secondary-magenta hover:underline"><i class="fas fa-paint-brush"></i> Ver en Figma</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <!-- Imagen del mockup del prototipo -->
-                        <div class="relative mb-6 overflow-hidden rounded-xl border border-slate-700 shadow-lg">
-                            <!-- Línea 2: Reemplaza 'https://placehold.co/...' con la URL de tu mockup o captura de pantalla de Figma -->
-                            <img src=figma.png
-                                alt="Mockup del prototipo UI/UX FarmaLocal"
-                                class="w-full h-auto object-cover transition duration-300 hover:scale-[1.05]"
-                                onerror="this.onerror=null; this.src='https://placehold.co/600x400/9D174D/ffffff?text=REEMPLAZAR+URL+PROYECTO+2'">
+        <!-- EDUCACIÓN Y CERTIFICACIONES -->
+        <section id="education" class="section-padding">
+            <div class="max-w-6xl mx-auto glass-panel p-8 md:p-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-secondary-magenta scroll-reveal">Educación &amp; Certificaciones</h2>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Formación Académica -->
+                    <div class="space-y-6 scroll-reveal">
+                        <h3 class="text-xl font-bold text-white border-b border-slate-800 pb-2"><i class="fas fa-graduation-cap text-primary-blue"></i> Formación Académica</h3>
+                        
+                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-text-light">Máster en Análisis de Datos (Big Data &amp; Data Science)</h4>
+                            <p class="text-xs text-secondary-magenta">Prometeo by thePower, Madrid, España | 2024 – 2026</p>
                         </div>
 
-                        <!-- Enlace a Figma -->
-                        <a href="https://www.figma.com/design/g5nzcp5epg5o6ikS81V3nN/Programaci%C3%B3n-multimedia?node-id=29-3&p=f"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-secondary-magenta hover:underline font-bold flex items-center focus:outline-none focus:ring-2 focus:ring-secondary-magenta rounded-md p-1 -m-1">
-                            <i class="fas fa-paint-brush w-3 h-3 mr-2"></i> Ver en Figma (Prototipo)
-                        </a>
+                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-text-light">Tecnólogo en Análisis y Desarrollo de Software (ADSO)</h4>
+                            <p class="text-xs text-secondary-magenta">Prometeo by thePower, Madrid, España | 2024 – 2026</p>
+                        </div>
+
+                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800">
+                            <h4 class="font-bold text-text-light">Pregrado en Administración de Empresas</h4>
+                            <p class="text-xs text-secondary-magenta">Universidad Externado de Colombia, Bogotá | 2013 – 2018</p>
+                        </div>
+                    </div>
+
+                    <!-- Certificaciones e Idiomas -->
+                    <div class="space-y-6 scroll-reveal">
+                        <h3 class="text-xl font-bold text-white border-b border-slate-800 pb-2"><i class="fas fa-award text-secondary-magenta"></i> Certificaciones &amp; Idiomas</h3>
+
+                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800 space-y-2 text-sm">
+                            <div class="flex items-center gap-2"><i class="fas fa-certificate text-yellow-400"></i> Transformación Digital &amp; Agentes de Cambio (Madrid, 2025)</div>
+                            <div class="flex items-center gap-2"><i class="fas fa-certificate text-yellow-400"></i> Metodologías Ágiles (Scrum Master &amp; Product Owner)</div>
+                            <div class="flex items-center gap-2"><i class="fas fa-certificate text-yellow-400"></i> IA Generativa Aplicada al Desarrollo</div>
+                        </div>
+
+                        <div class="bg-darkest/60 p-4 rounded-xl border border-slate-800 text-sm">
+                            <h4 class="font-bold text-white mb-1"><i class="fas fa-language text-accent-cyan"></i> Idiomas</h4>
+                            <p class="text-text-muted"><strong>Inglés:</strong> Profesional B2 (Certificación TOEFL / Interacción técnica y de negocios fluida).</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -362,241 +480,162 @@
         <!-- CONTACTO -->
         <section id="contact" class="section-padding">
             <div class="max-w-3xl mx-auto glass-panel p-8 md:p-12 text-center">
-                <h2 class="text-4xl font-extrabold mb-8 text-secondary-magenta scroll-reveal">Conectemos y Colaboremos</h2>
-                <p class="text-xl text-text-light mb-10 scroll-reveal">
-                    Estoy abierta a nuevas oportunidades, proyectos ambiciosos o simplemente un buen café virtual. ¡Hablemos de tus necesidades!
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-secondary-magenta scroll-reveal">¿Hablamos?</h2>
+                <p class="text-text-muted text-sm sm:text-base mb-8 scroll-reveal">
+                    Estoy disponible para proyectos de desarrollo backend/frontend, analítica de datos o consultoría.
                 </p>
 
-                <!-- Formulario de Contacto -->
-                <form id="contact-form" class="space-y-6 text-left w-full mx-auto scroll-reveal">
+                <form id="contact-form" class="space-y-4 text-left scroll-reveal">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-text-light mb-2">Tu Nombre</label>
-                        <input type="text" id="name" name="name" required
-                               class="w-full p-4 rounded-xl bg-card-bg border border-slate-700 text-text-light placeholder-slate-500 focus:border-primary-blue focus:ring-1 focus:ring-primary-blue shadow-inner">
+                        <label for="name" class="block text-xs font-semibold text-text-light mb-1">Nombre</label>
+                        <input type="text" id="name" required class="w-full p-3.5 rounded-xl bg-card-bg border border-slate-700 text-text-light focus:border-primary-blue outline-none text-sm">
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-medium text-text-light mb-2">Tu Correo Electrónico</label>
-                        <input type="email" id="email" name="email" required
-                               class="w-full p-4 rounded-xl bg-card-bg border border-slate-700 text-text-light placeholder-slate-500 focus:border-primary-blue focus:ring-1 focus:ring-primary-blue shadow-inner">
+                        <label for="email" class="block text-xs font-semibold text-text-light mb-1">Correo Electrónico</label>
+                        <input type="email" id="email" required class="w-full p-3.5 rounded-xl bg-card-bg border border-slate-700 text-text-light focus:border-primary-blue outline-none text-sm">
                     </div>
                     <div>
-                        <label for="message" class="block text-sm font-medium text-text-light mb-2">Mensaje</label>
-                        <textarea id="message" name="message" rows="5" required
-                                 class="w-full p-4 rounded-xl bg-card-bg border border-slate-700 text-text-light placeholder-slate-500 focus:border-primary-blue focus:ring-1 focus:ring-primary-blue shadow-inner"></textarea>
+                        <label for="message" class="block text-xs font-semibold text-text-light mb-1">Mensaje</label>
+                        <textarea id="message" rows="4" required class="w-full p-3.5 rounded-xl bg-card-bg border border-slate-700 text-text-light focus:border-primary-blue outline-none text-sm"></textarea>
                     </div>
 
-                    <div id="form-message" class="text-center py-3 rounded-xl font-medium hidden"></div>
+                    <div id="form-message" class="text-center py-2 text-sm rounded-lg hidden"></div>
 
-                    <div class="text-center pt-4">
-                        <button type="submit"
-                                class="w-full sm:w-2/3 px-8 py-4 bg-primary-blue text-white font-bold rounded-xl shadow-lg shadow-blue-900/40 hover:bg-blue-600 transition transform hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-blue-300/50 flex items-center justify-center mx-auto">
-                            <i class="fas fa-paper-plane mr-3"></i> Enviar Mensaje
-                        </button>
-                    </div>
+                    <button type="submit" class="w-full py-4 bg-primary-blue hover:bg-blue-600 text-white font-bold rounded-xl shadow-lg transition">
+                        <i class="fas fa-paper-plane mr-2"></i> Enviar Mensaje
+                    </button>
                 </form>
 
-                <!-- Enlaces Sociales -->
-                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-12 border-t border-slate-800 pt-8 scroll-reveal" style="transition-delay: 0.2s;">
-                    <a href="mailto:luisa.rincond95@gmail.com?subject=Consulta%20de%20Oportunidad%20Profesional%20(Portafolio)"
-                        class="flex items-center justify-center px-6 py-3 bg-card-bg border border-slate-700 text-text-light rounded-lg shadow-md hover:bg-secondary-magenta hover:border-secondary-magenta transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-secondary-magenta" aria-label="Enviar correo electrónico">
-                        <i class="fas fa-envelope w-5 h-5 mr-2"></i>
-                        Email
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/luisarinconduran/" target="_blank" rel="noopener noreferrer"
-                        class="flex items-center justify-center px-6 py-3 bg-card-bg border border-slate-700 text-text-light rounded-lg shadow-md hover:bg-primary-blue hover:border-primary-blue transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-blue" aria-label="Abrir perfil de LinkedIn">
-                        <i class="fab fa-linkedin w-5 h-5 mr-2"></i>
-                        LinkedIn
-                    </a>
-
-                    <a href="https://github.com/LuisaR95" target="_blank" rel="noopener noreferrer"
-                        class="flex items-center justify-center px-6 py-3 bg-card-bg border border-slate-700 text-text-light rounded-lg shadow-md hover:bg-secondary-magenta hover:border-secondary-magenta transition transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-secondary-magenta" aria-label="Abrir perfil de GitHub">
-                        <i class="fab fa-github w-5 h-5 mr-2"></i>
-                        GitHub
-                    </a>
+                <div class="flex justify-center gap-6 mt-10 pt-6 border-t border-slate-800 text-lg">
+                    <a href="mailto:luisa.rincond95@gmail.com" class="text-text-muted hover:text-secondary-magenta transition"><i class="fas fa-envelope"></i></a>
+                    <a href="https://linkedin.com/in/luisarinconduran" target="_blank" class="text-text-muted hover:text-primary-blue transition"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/luisarinconduran" target="_blank" class="text-text-muted hover:text-secondary-magenta transition"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </section>
 
         <!-- FOOTER -->
-        <footer class="border-t border-slate-800 py-6 text-center text-slate-400 text-sm bg-darkest/50">
-            &copy; 2025 Luisa Fernanda Rincón. Desarrollado con visión Administrativa, Ejecución Técnica y Análisis de Datos.
+        <footer class="border-t border-slate-800/80 py-6 text-center text-text-muted text-xs bg-darkest">
+            &copy; 2026 Luisa Fernanda Rincón Durán. Desarrollado con visión Administrativa, Ejecución Técnica y Análisis de Datos.
         </footer>
     </main>
 
-    <!-- JS: menú, enlaces activos, scroll reveal y manejo de formulario -->
+    <!-- MODAL RECOMENDACIÓN -->
+    <div id="modal-recommendation" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-card-bg border border-slate-700 max-w-2xl w-full rounded-2xl p-6 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-text-muted hover:text-white text-xl">&times;</button>
+            <h3 class="text-xl font-bold text-secondary-magenta mb-2">Carta de Recomendación – SNGULAR</h3>
+            <p class="text-xs text-text-muted mb-4">Firmado por Carlos Cenjor Ramírez (Mentor &amp; Responsable de Proyecto)</p>
+            <div class="text-xs text-text-light space-y-3 leading-relaxed border-t border-slate-800 pt-3">
+                <p><strong>A quien corresponda:</strong></p>
+                <p>Tengo el agrado de dirigirme a usted con el propósito de expresar mi más sincera y entusiasta recomendación profesional a favor de <strong>Luisa Fernanda Rincón</strong>, quien se ha desempeñado como Ingeniera de Software en Prácticas bajo mi supervisión directa durante el periodo comprendido entre el 2 de marzo de 2026 y el 28 de mayo de 2026 en Sngular.</p>
+                <p>Durante su estancia, Luisa ha participado en proyectos complejos bajo arquitectura de microservicios (Java 21, Spring Boot, MapStruct, Angular, JUnit 5, Mockito, Testcontainers y Mutation Testing)...</p>
+                <p>Destaca por su <strong>Steep Learning Curve</strong>, autonomía, proactividad, sinergia con IA generativa y habilidades interpersonales sobresalientes.</p>
+            </div>
+            <div class="mt-6 flex justify-end">
+                <button onclick="closeModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-lg text-xs">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
     <script>
-        // Datos de habilidades (mantenidos y usados para generar las barras)
+        // Stack de Habilidades reales del CV
         const SKILLS = {
-            soft: [
-                { name: "Pensamiento Crítico", level: 90, color: 'magenta' },
-                { name: "Comunicación Efectiva", level: 95, color: 'magenta' },
-                { name: "Resolución de Problemas", level: 85, color: 'magenta' },
-                { name: "Adaptabilidad y Flexibilidad", level: 90, color: 'magenta' },
-            ],
             dev: [
-                { name: "JavaScript / TypeScript", level: 80, color: 'blue' },
-                { name: "HTML5 & CSS3 / Tailwind", level: 90, color: 'blue' },
-                { name: "Framework (React/Angular)", level: 75, color: 'blue' },
-                { name: "Bases de Datos (SQL/NoSQL)", level: 85, color: 'blue' },
+                { name: "Java 21 & Spring Boot", level: 90, color: 'blue' },
+                { name: "APIs REST & Microservicios", level: 90, color: 'blue' },
+                { name: "Angular & TypeScript", level: 85, color: 'blue' },
+                { name: "Hibernate / JPA / MapStruct", level: 85, color: 'blue' },
             ],
             data: [
-                { name: "Python (Pandas, Scikit-learn)", level: 90, color: 'magenta' },
-                { name: "SQL (Consultas Avanzadas)", level: 85, color: 'magenta' },
-                { name: "Power BI / Tableau", level: 95, color: 'magenta' },
-                { name: "Modelado Estadístico", level: 80, color: 'magenta' },
+                { name: "Power BI & Dashboards", level: 95, color: 'magenta' },
+                { name: "SQL (PostgreSQL / Oracle)", level: 90, color: 'magenta' },
+                { name: "Python (Pandas, NumPy)", level: 85, color: 'magenta' },
+                { name: "Procesamiento ETL & KPIs", level: 90, color: 'magenta' },
             ],
-            mgmt: [
-                { name: "Gestión de Proyectos (Agile/Scrum)", level: 95, color: 'blue' },
-                { name: "Análisis de Costes y Presupuestos", level: 90, color: 'blue' },
-                { name: "Liderazgo de Equipos", level: 90, color: 'blue' },
-                { name: "Comunicación Interdepartamental", level: 85, color: 'blue' },
+            tools: [
+                { name: "JUnit 5 & Mockito", level: 88, color: 'cyan' },
+                { name: "Testcontainers & Mutation Testing", level: 85, color: 'cyan' },
+                { name: "Docker & GCP Pub/Sub", level: 80, color: 'cyan' },
+                { name: "Git / GitLab & IDEs + IA", level: 92, color: 'cyan' },
+            ],
+            soft: [
+                { name: "Curva de Aprendizaje Rápida", level: 98, color: 'magenta' },
+                { name: "Autonomía & Proactividad", level: 95, color: 'magenta' },
+                { name: "Scrum / Agile Frameworks", level: 90, color: 'magenta' },
+                { name: "Visión Financiera & ROI", level: 92, color: 'magenta' },
             ]
         };
 
-        // Función para renderizar una tarjeta de habilidad con barra de progreso
         function renderSkillCard(skill) {
-            const colorClass = skill.color === 'blue' ? 'bg-primary-blue' : 'bg-secondary-magenta';
-            const hoverBorderClass = skill.color === 'blue' ? 'hover:border-primary-blue' : 'hover:border-secondary-magenta';
-
+            const colorClass = skill.color === 'blue' ? 'bg-primary-blue' : (skill.color === 'magenta' ? 'bg-secondary-magenta' : 'bg-accent-cyan');
             return `
-                <div class="skill-card p-4 rounded-xl flex flex-col justify-between border border-slate-700/50 ${hoverBorderClass}" data-level="${skill.level}">
-                    <p class="font-medium text-white mb-3">${skill.name}</p>
-                    <div class="w-full bg-slate-800 rounded-full h-2.5">
-                        <div class="progress-bar-fill ${colorClass} h-2.5 rounded-full" style="width: 0%" aria-valuenow="${skill.level}" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="skill-card p-4 rounded-xl flex flex-col justify-between border border-slate-800" data-level="${skill.level}">
+                    <p class="font-semibold text-white text-xs mb-2">${skill.name}</p>
+                    <div class="w-full bg-slate-800 rounded-full h-2">
+                        <div class="progress-bar-fill ${colorClass} h-2 rounded-full transition-all duration-1000" style="width: 0%" aria-valuenow="${skill.level}"></div>
                     </div>
                 </div>
             `;
         }
 
-        // Función para inyectar las tarjetas en la sección de habilidades
-        function initializeSkillSection() {
-            document.getElementById('soft-skills').innerHTML = SKILLS.soft.map(renderSkillCard).join('');
+        function initSkills() {
             document.getElementById('dev-skills').innerHTML = SKILLS.dev.map(renderSkillCard).join('');
             document.getElementById('data-skills').innerHTML = SKILLS.data.map(renderSkillCard).join('');
-            document.getElementById('mgmt-skills').innerHTML = SKILLS.mgmt.map(renderSkillCard).join('');
+            document.getElementById('tools-skills').innerHTML = SKILLS.tools.map(renderSkillCard).join('');
+            document.getElementById('soft-skills').innerHTML = SKILLS.soft.map(renderSkillCard).join('');
+        }
+
+        function openModal() {
+            document.getElementById('modal-recommendation').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modal-recommendation').classList.add('hidden');
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            initializeSkillSection(); // Carga las tarjetas de habilidad
+            initSkills();
 
-            const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
-            const sections = document.querySelectorAll('section, header#hero');
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const contactForm = document.getElementById('contact-form');
-            const formMessage = document.getElementById('form-message');
-
-            // === 1. Menú móvil ===
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('open');
-            });
-            document.querySelectorAll('.mobile-nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    // Cierra el menú después de hacer click
-                    mobileMenu.classList.remove('open');
-                    // Asegura el scroll suave
-                    const targetId = link.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        // Offset para compensar la barra de navegación fija
-                        const offset = targetElement.offsetTop - 80; 
-                        window.scrollTo({ top: offset, behavior: 'smooth' });
-                        history.pushState(null, null, targetId);
-                    }
-                });
+            // Mobile Menu Fix
+            const btn = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('open');
             });
 
-            // === 2. Scroll suave (para desktop) ===
-            document.querySelectorAll('.nav-link').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        // Offset para compensar la barra de navegación fija
-                        const offset = targetElement.offsetTop - 80;
-                        window.scrollTo({ top: offset, behavior: 'smooth' });
-                        history.pushState(null, null, targetId);
-                    }
-                });
+            document.querySelectorAll('.mobile-nav-link').forEach(l => {
+                l.addEventListener('click', () => menu.classList.remove('open'));
             });
 
-            // === 3. Enlace activo en nav (Intersection Observer) ===
-            const navObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        document.querySelectorAll('.nav-link').forEach(link => {
-                            link.classList.remove('active', 'text-primary-blue', 'font-semibold');
-                            link.classList.add('text-text-muted');
-                        });
-                        const id = entry.target.id;
-                        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
-                        if (activeLink) {
-                            activeLink.classList.remove('text-text-muted');
-                            activeLink.classList.add('active', 'text-secondary-magenta', 'font-semibold');
-                        }
-                    }
-                });
-            }, {
-                rootMargin: '-100px 0px -60% 0px',
-                threshold: 0.1
-            });
-
-            sections.forEach(section => navObserver.observe(section));
-
-            // === 4. Scroll Reveal y Animación de Barras de Progreso ===
+            // Scroll Reveal Observer
             const revealElements = document.querySelectorAll('.scroll-reveal');
-            const scrollObserver = new IntersectionObserver((entries, obs) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animate-in');
-                        
-                        // Si la sección es la de habilidades, activa las barras de progreso
                         if (entry.target.id === 'skills') {
                             document.querySelectorAll('.progress-bar-fill').forEach(bar => {
                                 const level = bar.getAttribute('aria-valuenow');
-                                setTimeout(() => {
-                                    bar.style.width = `${level}%`;
-                                }, 200);
+                                bar.style.width = `${level}%`;
                             });
                         }
-
-                        obs.unobserve(entry.target);
                     }
                 });
-            }, {
-                threshold: 0.15,
-                rootMargin: '0px 0px -80px 0px'
-            });
+            }, { threshold: 0.1 });
 
-            revealElements.forEach(el => scrollObserver.observe(el));
+            revealElements.forEach(el => observer.observe(el));
 
-            // === 5. Manejo del Formulario de Contacto (Simulado) ===
-            contactForm.addEventListener('submit', function(e) {
+            // Form Submit Simulation
+            document.getElementById('contact-form').addEventListener('submit', (e) => {
                 e.preventDefault();
-                formMessage.classList.remove('hidden', 'bg-red-900/50', 'text-red-300', 'bg-green-900/50', 'text-green-300');
-                
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-
-                if (name && email && message) {
-                    // Simulación de envío exitoso
-                    formMessage.classList.add('bg-primary-blue/30', 'text-light-glow');
-                    formMessage.textContent = `¡Gracias, ${name}! Tu mensaje ha sido recibido con éxito. Me pondré en contacto contigo pronto.`;
-                    formMessage.classList.remove('hidden');
-                    contactForm.reset();
-                } else {
-                    // Validación simple (aunque los campos ya son required)
-                    formMessage.classList.add('bg-secondary-magenta/30', 'text-pink-300');
-                    formMessage.textContent = 'Por favor, completa todos los campos del formulario.';
-                    formMessage.classList.remove('hidden');
-                }
+                const msg = document.getElementById('form-message');
+                msg.className = "text-center py-2 text-sm rounded-lg bg-green-900/40 text-green-300 block";
+                msg.textContent = "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.";
+                e.target.reset();
             });
         });
     </script>
 </body>
 </html>
-
-
