@@ -389,43 +389,99 @@
             <div class="max-w-6xl mx-auto glass-panel p-8 md:p-12">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-4 text-white scroll-reveal">Proyectos Destacados</h2>
                 <p class="text-center text-text-muted text-sm sm:text-base mb-10 scroll-reveal">
-                    Casos de estudio y repositorios que reflejan el desarrollo técnico y analítico.
+                    Casos de estudio, proyectos integradores y repositorios que reflejan mi capacidad técnica y analítica.
                 </p>
 
-                <div class="grid md:grid-cols-2 gap-8">
-                    <!-- PROYECTO 1 -->
-                    <div class="project-card p-6 rounded-2xl bg-card-bg/80 border border-slate-800 hover:border-primary-blue scroll-reveal">
-                        <h3 class="text-xl font-bold text-white mb-2">Landing Page - Descubre Cartagena</h3>
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            <span class="bg-primary-blue/20 text-light-glow text-xs font-medium px-2.5 py-0.5 rounded-full">HTML5 / CSS3</span>
-                            <span class="bg-primary-blue/20 text-light-glow text-xs font-medium px-2.5 py-0.5 rounded-full">Responsive Design</span>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- PROYECTO 1: MADRILINK (PROYECTO INSIGNIA / FINAL) -->
+                    <div class="project-card p-6 rounded-2xl bg-gradient-to-b from-card-bg to-darkest border-2 border-secondary-magenta/60 hover:border-pink-400 scroll-reveal relative flex flex-col justify-between shadow-xl">
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-secondary-magenta/30">
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i> Proyecto Integrador Final
+                                </span>
+                                <span class="text-xs text-text-muted"><i class="far fa-calendar-alt mr-1"></i> Abr 2026</span>
+                            </div>
+                            <h3 class="text-2xl font-black text-white mb-2">Madrilink</h3>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-0.5 rounded-md">Java / Spring Boot</span>
+                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-0.5 rounded-md">REST APIs</span>
+                                <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-0.5 rounded-md">SQL / DB</span>
+                                <span class="bg-accent-cyan/20 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-md">Full Stack Architecture</span>
+                            </div>
+                            <p class="text-text-muted text-xs sm:text-sm mb-6 leading-relaxed">
+                                Plataforma web integrada desarrollada como proyecto final de estudios. Diseñada con arquitectura modular backend, consumo de APIs y gestión de datos orientada a resolver necesidades comunitarias/urbanas en Madrid. Incluye memoria técnica y ejecutable completo.
+                            </p>
                         </div>
-                        <p class="text-text-muted text-sm mb-4 leading-relaxed">
-                            Página de aterrizaje optimizada con estructura semántica, diseño adaptable para dispositivos móviles y navegación intuitiva para usuarios turísticos.
-                        </p>
-                        <div class="overflow-hidden rounded-xl border border-slate-800 mb-4">
-                            <img src="cartagena.png" alt="Cartagena Project" class="w-full h-48 object-cover hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E3A8A/ffffff?text=Descubre+Cartagena'">
-                        </div>
-                        <div class="flex gap-4 text-sm font-semibold">
-                            <a href="https://github.com/LuisaR95/Lenguaje-marca" target="_blank" class="text-secondary-magenta hover:underline"><i class="fab fa-github"></i> Ver Código</a>
+                        
+                        <div>
+                            <div class="overflow-hidden rounded-xl border border-slate-800 mb-4 bg-darkest/80 p-3 text-center">
+                                <i class="fas fa-network-wired text-secondary-magenta text-4xl mb-2 block"></i>
+                                <span class="text-xs text-text-muted font-mono">github.com/LuisaR95/madridlink</span>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-2 text-xs font-bold">
+                                <a href="https://github.com/LuisaR95/madridlink" target="_blank" class="flex-1 py-2.5 px-3 bg-secondary-magenta hover:bg-pink-600 text-white rounded-lg text-center transition flex items-center justify-center gap-1.5 shadow-md">
+                                    <i class="fab fa-github text-sm"></i> Repositorio Git
+                                </a>
+                                <a href="https://drive.google.com/drive/u/0/folders/1yzT0cAlzk0sIV6HngrvuaqBfU9dvj-h" target="_blank" class="flex-1 py-2.5 px-3 bg-slate-800 hover:bg-slate-700 text-text-light rounded-lg text-center border border-slate-700 transition flex items-center justify-center gap-1.5">
+                                    <i class="fab fa-google-drive text-yellow-400 text-sm"></i> Memoria &amp; Docs
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- PROYECTO 2 -->
-                    <div class="project-card p-6 rounded-2xl bg-card-bg/80 border border-slate-800 hover:border-secondary-magenta scroll-reveal">
-                        <h3 class="text-xl font-bold text-white mb-2">Prototipo UI/UX FarmaLocal</h3>
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Figma</span>
-                            <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-medium px-2.5 py-0.5 rounded-full">UI/UX Prototype</span>
+                    <!-- PROYECTO 2: CARTAGENA -->
+                    <div class="project-card p-6 rounded-2xl bg-card-bg/80 border border-slate-800 hover:border-primary-blue scroll-reveal flex flex-col justify-between">
+                        <div>
+                            <span class="bg-primary-blue/20 text-light-glow text-xs font-semibold px-2.5 py-1 rounded-full w-fit block mb-3">Maquetación &amp; Web</span>
+                            <h3 class="text-xl font-bold text-white mb-2">Landing Page - Descubre Cartagena</h3>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-primary-blue/20 text-light-glow text-xs font-medium px-2.5 py-0.5 rounded-full">HTML5 / CSS3</span>
+                                <span class="bg-primary-blue/20 text-light-glow text-xs font-medium px-2.5 py-0.5 rounded-full">Responsive Design</span>
+                            </div>
+                            <p class="text-text-muted text-xs sm:text-sm mb-4 leading-relaxed">
+                                Página de aterrizaje optimizada con estructura semántica, diseño adaptable para dispositivos móviles y navegación intuitiva para usuarios turísticos.
+                            </p>
                         </div>
-                        <p class="text-text-muted text-sm mb-4 leading-relaxed">
-                            Diseño interactivo para e-commerce farmacéutico local, estructurado para maximizar tasas de conversión y facilitar checkout móvil.
-                        </p>
-                        <div class="overflow-hidden rounded-xl border border-slate-800 mb-4">
-                            <img src="figma.png" alt="FarmaLocal Figma Prototype" class="w-full h-48 object-cover hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/9D174D/ffffff?text=FarmaLocal+UI+UX'">
+                        <div>
+                            <div class="overflow-hidden rounded-xl border border-slate-800 mb-4">
+                                <img src="Madrilink.png" 
+                                     alt="Madrilink Project Screenshot" 
+                                     class="w-full h-36 object-cover hover:scale-105 transition duration-300" 
+                                     onerror="this.onerror=null; this.src='Marilink.png'; this.onerror=function(){this.src='https://placehold.co/600x400/1E3A8A/ffffff?text=Madrilink+Platform';};">
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-2 text-xs font-bold">
+                                <a href="https://github.com/LuisaR95/madridlink" target="_blank" class="flex-1 py-2.5 px-3 bg-secondary-magenta hover:bg-pink-600 text-white rounded-lg text-center transition flex items-center justify-center gap-1.5 shadow-md">
+                                    <i class="fab fa-github text-sm"></i> Repositorio Git
+                                </a>
+                                <img src="cartagena.png" alt="Cartagena Project" class="w-full h-36 object-cover hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1E3A8A/ffffff?text=Descubre+Cartagena'">
+                            </div>
+                            <div class="flex gap-4 text-xs font-semibold">
+                                <a href="https://github.com/LuisaR95/Lenguaje-marca" target="_blank" class="text-secondary-magenta hover:underline flex items-center gap-1"><i class="fab fa-github"></i> Ver Código en GitHub</a>
+                            </div>
                         </div>
-                        <div class="flex gap-4 text-sm font-semibold">
-                            <a href="https://www.figma.com/design/g5nzcp5epg5o6ikS81V3nN/Programaci%C3%B3n-multimedia?node-id=29-3&p=f" target="_blank" class="text-secondary-magenta hover:underline"><i class="fas fa-paint-brush"></i> Ver en Figma</a>
+                    </div>
+
+                    <!-- PROYECTO 3: FARMALOCAL -->
+                    <div class="project-card p-6 rounded-2xl bg-card-bg/80 border border-slate-800 hover:border-secondary-magenta scroll-reveal flex flex-col justify-between">
+                        <div>
+                            <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-semibold px-2.5 py-1 rounded-full w-fit block mb-3">Diseño UI/UX</span>
+                            <h3 class="text-xl font-bold text-white mb-2">Prototipo UI/UX FarmaLocal</h3>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Figma</span>
+                                <span class="bg-secondary-magenta/20 text-pink-300 text-xs font-medium px-2.5 py-0.5 rounded-full">UI/UX Prototype</span>
+                            </div>
+                            <p class="text-text-muted text-xs sm:text-sm mb-4 leading-relaxed">
+                                Diseño interactivo para e-commerce farmacéutico local, estructurado para maximizar tasas de conversión y facilitar checkout móvil.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="overflow-hidden rounded-xl border border-slate-800 mb-4">
+                                <img src="figma.png" alt="FarmaLocal Figma Prototype" class="w-full h-36 object-cover hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x400/9D174D/ffffff?text=FarmaLocal+UI+UX'">
+                            </div>
+                            <div class="flex gap-4 text-xs font-semibold">
+                                <a href="https://www.figma.com/design/g5nzcp5epg5o6ikS81V3nN/Programaci%C3%B3n-multimedia?node-id=29-3&p=f" target="_blank" class="text-secondary-magenta hover:underline flex items-center gap-1"><i class="fas fa-paint-brush"></i> Ver en Figma</a>
+                            </div>
                         </div>
                     </div>
                 </div>
